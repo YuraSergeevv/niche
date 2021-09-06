@@ -1,6 +1,6 @@
 .main{
     .center_wrap{
-       height: 100%;
+       min-height: 100vh;
        display: flex;
        align-items: center;
        justify-content: center;
@@ -12,7 +12,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100% ;
 
     .top_inner {
         right: 0;

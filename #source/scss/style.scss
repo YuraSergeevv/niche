@@ -48,7 +48,6 @@ body {
 .wrapper {
     width: 100%;
     min-height: 100vh;
-    height: 100%;
     background-color: #1b202a;
 }
 a{
@@ -63,17 +62,11 @@ a{
 
 // <КОНТЕЙНЕР>---------------------------------------------------------------
 .container {
-    max-width: $max-width+px;
-    width: 100%;
-    margin: 0 auto;
+    margin: 0 15px 0 15px;
     padding: 0 $padd-container+px;
 }
 .page{
     padding-top: 100px;
-    height: 100vh;
-    background-color: #BE1E28;
-    margin: 0 auto 0 15px;
-
 }
 
 // </КОНТЕЙНЕР>--------------------------------------------------------------
