@@ -30,7 +30,6 @@ $color_1:#BE1E28;
 
 // <BODY>--------------------------------------------------------------------
 body {
-    line-height: 1.25;
     font-size: $body-font-size+px;
     font-family: $font-family;
     position: relative;
@@ -45,146 +44,158 @@ body {
 // <ОБОЛОЧКА>----------------------------------------------------------------
 .wrapper {
     width: 100%;
-    min-height: 100vh;
-    height: 100%;
+   // min-height: 100vh;
     background-color: #1b202a;
 }
-
+a{
+    color: $color_text;
+    transition: 0.4s;
+    font-weight: 400;
+    &:hover{
+        color:$color_1;
+    }
+}
 // </ОБОЛОЧКА>---------------------------------------------------------------
 
 // <КОНТЕЙНЕР>---------------------------------------------------------------
 .container {
     max-width: $max-width+px;
+    width: 100%;
     margin: 0 auto;
     padding: 0 $padd-container+px;
+}
+.page{
+    padding-top: 100px;
+    background: #BE1E28;
+    height: 770px;
 }
 
 // </КОНТЕЙНЕР>--------------------------------------------------------------
 
-// <ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>---------------------------
-@import "class.scss";
-// </ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>--------------------------
 
-// <ШАПКА>-------------------------------------------------------------------
-@import 'header.scss';
-// </ШАПКА>------------------------------------------------------------------
 
-// <ОСНОВНОЙ БЛОК>-----------------------------------------------------------
-
-input,
-textarea {
-    &.error {
-        border-color: red;
-    }
-}
-
-// </ОСНОВНОЙ БЛОК>----------------------------------------------------------
-
-// <404>---------------------------------------------------------------------
-//===========================================================================
-// </404>--------------------------------------------------------------------
-
-// <ПОДВАЛ>------------------------------------------------------------------
-@import "footer.scss";
-// </ПОДВАЛ>-----------------------------------------------------------------
-
-// <ПОПАП>-------------------------------------------------------------------
-@import "popup.scss";
-// </ПОПАП>------------------------------------------------------------------
-
-// <ПРОКРУТКА ВВЕРХ>---------------------------------------------------------
-.scroll-up {
-    position: fixed;
-    right: 50px;
-    bottom: 50px;
-    z-index: 100;
-    width: 45px;
-    height: 45px;
-    cursor: pointer;
-    border-radius: 50%;
-    box-shadow: inset 0 0 0 3px #dcdcdc;
-    @include anim(0.4s, 0s);
-    transform: translateY(25px);
-    opacity: 0;
-    visibility: hidden;
-
-    &:before {
-        content: '';
-        position: absolute;
-        top: 55%;
-        left: 50%;
-        transform: translate(-50%, -50%) rotate(45deg);
-        border: 3px solid red;
-        width: 10px;
-        height: 10px;
-        border-right-width: 0;
-        border-bottom-width: 0;
-        transition: inherit;
-        opacity: 0.6;
-    }
-
-    &__path {
-        box-sizing: border-box;
-        fill: none;
-        stroke: red;
-        stroke-width: 3px;
-        @include anim(0.4s, 0s);
-    }
-
-    &.scroll-up_active {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-
-    &:hover {
-        &:before {
-            border-color: red;
-            opacity: 1;
-        }
-    }
-}
-
-// </ПРОКРУТКА ВВЕРХ>--------------------------------------------------------
 
 // <ПОДКЛЮЧЕНИЕ SCSS>-----------------------------------------------
+@import "components/input_item.scss";
+@import "components/lang.scss";
+
+//Компоненты
+
+@import "class.scss";
+@import 'header.scss';
 @import "main.scss";
+@import "footer.scss";
 // </ПОДКЛЮЧЕНИЕ SCSS>----------------------------------------------
 
-.input_item{
-     display: flex;
-     flex-direction: column;
-     align-items: flex-start;
-
-
-    .required{
-        position: relative;
-        &::after{
-            content: "*";
-            color: $color_1;
-            position: absolute;
-            right: -10px;
-            top: 0;
-        }
+.logo{
+    display: block;
+    width: 180px;
+    height: 32px;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
     }
-    .title{
-        display: inline-block;
-        margin-bottom: 10px;
-        order: 1;
-        transition: 0.4s;
-    }
-    .input{
-        order: 2;
-        padding: 10px 15px;
-        background-color: transparent;
-        border: 1px solid #3A3F49;
-        border-radius: 4px;
-        color: $color_text;
-        font-size: 15px;
-        &input:active,&:focus{
-            &+.title{
-                color: #ffffff;
+}
+
+.df{
+    display: flex;
+    align-items: flex-start;
+    .nav_bar{
+        background: linear-gradient(180deg, #252B3B 0%, #1B202A 100%);
+        height: 100vh;
+        flex: 0 0 340px;
+        display: flex;
+        flex-direction: column;
+        .top{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 30px;
+            margin-bottom: 80px;
+            .notice{
+                position: relative;
+                .icon{
+                    width: 16px;
+                    height: 16px;
+                    fill: #929AAC;
+                }
+                &.new{
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        width: 6px;
+                        height: 6px;
+                        background-color: $color_1;
+                        top: 2px;
+                        right: 1px;
+                        border-radius: 50%;
+                    }
+                }
             }
         }
+        .center{
+            flex: 1 1 auto;
+            .menu_item{
+                padding: 0 0 0 65px;
+                position: relative;
+            }
+            .menu_item{
+                margin-bottom: 25px;
+                &:last-of-type{
+                    margin-bottom: 0;
+                }
+                &.active{
+                    &:after{
+                        content: '';
+                        width: 40px;
+                        height: 1px;
+                        background-color:#ffffff;
+                        position: absolute;
+                        top: calc(50% - 0.5px);
+                        left: 0;
+                    }
+                    &:before{
+                        content: '';
+                        width: 6px;
+                        height: 6px;
+                        background-color: #ffffff;
+                        transform: rotate(45deg);
+                        position: absolute;
+                        left: 37px;
+                        top: calc(50% - 3px);
+                    }
+                   .menu_link{
+                       font-weight: 600;
+                       color: #ffffff;
+                       &:hover{
+                           color: #ffffff;
+                       }
+                   }
+                }
+            }
+            .menu_link{
+                font-weight: 500;
+                font-size: 16px;
+                color: $color_text;
+                transition: 0.4s;
+                &:hover{
+                    color:$color_1;
+                }
+            }
+        }
+        .bottom{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 30px;
+            font-size: 13px;
+        }
     }
+    .main_block{
+        position: relative;
+        height: 100px;
+        width: 100%;
+    }
+
 }

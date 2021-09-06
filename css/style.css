@@ -33,7 +33,6 @@ footer {
 
 html,
 body {
-  height: 100%;
   padding: 0;
   margin: 0;
   min-width: 320px;
@@ -91,7 +90,6 @@ h6 {
 
 /* / обнуление общих параметров */
 body {
-  line-height: 1.25;
   font-size: 15px;
   font-family: "Lato", sans-serif;
   position: relative;
@@ -103,15 +101,117 @@ body {
 
 .wrapper {
   width: 100%;
-  min-height: 100vh;
-  height: 100%;
   background-color: #1b202a;
+}
+
+a {
+  color: #929AAC;
+  transition: 0.4s;
+  font-weight: 400;
+}
+a:hover {
+  color: #BE1E28;
 }
 
 .container {
   max-width: 1470px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+.page {
+  padding-top: 100px;
+  background: #BE1E28;
+  height: 770px;
+}
+
+.input_item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+.input_item .required {
+  position: relative;
+}
+.input_item .required::after {
+  content: "*";
+  color: #BE1E28;
+  position: absolute;
+  right: -10px;
+  top: 0;
+}
+.input_item .title {
+  display: inline-block;
+  margin-bottom: 10px;
+  order: 1;
+  transition: 0.4s;
+}
+.input_item .input {
+  order: 2;
+  padding: 10px 15px;
+  background-color: transparent;
+  border: 1px solid #3A3F49;
+  border-radius: 4px;
+  color: #929AAC;
+  font-size: 15px;
+}
+.input_item .input.error {
+  border: 1px solid #BE1E28;
+}
+.input_item .inputinput:active + .title, .input_item .input:focus + .title {
+  color: #ffffff;
+}
+
+.langs {
+  border: 1px solid #3A3F49;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 32px;
+  width: 38px;
+}
+.langs:hover .lang_block {
+  opacity: 1;
+  pointer-events: initial;
+}
+.langs .lang_block {
+  transition: 0.4s;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  margin-top: 5px;
+  top: 100%;
+  left: 0;
+  border: 1px solid #3A3F49;
+  border-radius: 4px;
+}
+.langs .lang_block:after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 10px;
+}
+.langs .lang_block .lang:hover {
+  color: #ffffff;
+}
+.langs .lang_use {
+  color: #ffffff;
+}
+.langs .lang {
+  transition: 0.3s;
+  cursor: pointer;
+  font-size: 16px;
+  height: 32px;
+  width: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .row {
@@ -219,138 +319,99 @@ li.counter li:before {
   height: auto;
 }
 
-input.error,
-textarea.error {
-  border-color: red;
+.main {
+  position: relative;
+}
+.main .center_wrap {
+  height: calc(100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.popup {
-  display: none;
-  position: fixed;
+.top_wrap {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
-  z-index: 9999;
 }
-
-.popup__opas {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-}
-
-.popup__wrapp {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #fff;
-  border-radius: 3px;
-  z-index: 9999;
-  padding: 20px;
-  max-width: 460px;
-  width: 100%;
-}
-
-.popup__close {
-  position: absolute;
-  display: block;
-  width: 20px;
-  height: 20px;
-  top: -30px;
-  right: -30px;
-  border-radius: 3px;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-  transition: 0.4s;
-  cursor: pointer;
-  background: #fff url(../img/svg/close.svg) 50% 50%/65% no-repeat;
-}
-
-.scroll-up {
-  position: fixed;
-  right: 50px;
-  bottom: 50px;
-  z-index: 100;
-  width: 45px;
-  height: 45px;
-  cursor: pointer;
-  border-radius: 50%;
-  box-shadow: inset 0 0 0 3px #dcdcdc;
-  transition: all 0.4s ease 0s;
-  transform: translateY(25px);
-  opacity: 0;
-  visibility: hidden;
-}
-.scroll-up:before {
-  content: "";
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-  border: 3px solid red;
-  width: 10px;
-  height: 10px;
-  border-right-width: 0;
-  border-bottom-width: 0;
-  transition: inherit;
-  opacity: 0.6;
-}
-.scroll-up__path {
-  box-sizing: border-box;
-  fill: none;
-  stroke: red;
-  stroke-width: 3px;
-  transition: all 0.4s ease 0s;
-}
-.scroll-up.scroll-up_active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-.scroll-up:hover:before {
-  border-color: red;
-  opacity: 1;
-}
-
-.main .top_inner {
+.top_wrap .top_inner {
   right: 0;
   left: 0;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 0;
+  padding: 20px 30px;
 }
-.main .left {
+.top_wrap .left {
   display: flex;
   align-items: center;
 }
-.main .left .text {
+.top_wrap .left .text {
   font-weight: 300;
   font-size: 24px;
   line-height: 1.2;
   letter-spacing: 0.02em;
 }
-.main .left .logo {
+.top_wrap .left .logo {
   margin-right: 160px;
 }
-.main .right {
+.top_wrap .right {
   display: flex;
   align-items: center;
 }
-.main .center_wrap {
-  height: calc(100% - 94px);
+
+.langs {
+  border: 1px solid #3A3F49;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.langs:hover .lang_block {
+  opacity: 1;
+  pointer-events: initial;
+}
+.langs .lang_block {
+  transition: 0.4s;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  margin-top: 5px;
+  top: 100%;
+  left: 0;
+  border: 1px solid #3A3F49;
+  border-radius: 4px;
+}
+.langs .lang_block:after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 10px;
+}
+.langs .lang_block .lang:hover {
+  color: #ffffff;
+}
+.langs .lang_use {
+  color: #ffffff;
+}
+.langs .lang {
+  transition: 0.3s;
+  cursor: pointer;
+  font-size: 16px;
+  height: 32px;
+  width: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .logo {
+  display: block;
   width: 180px;
   height: 32px;
 }
@@ -360,36 +421,99 @@ textarea.error {
   object-fit: contain;
 }
 
-.input_item {
+.df {
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
 }
-.input_item .required {
+.df .nav_bar {
+  background: linear-gradient(180deg, #252B3B 0%, #1B202A 100%);
+  height: 100vh;
+  flex: 0 0 340px;
+  display: flex;
+  flex-direction: column;
+}
+.df .nav_bar .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+  margin-bottom: 80px;
+}
+.df .nav_bar .top .notice {
   position: relative;
 }
-.input_item .required::after {
-  content: "*";
-  color: #BE1E28;
-  position: absolute;
-  right: -10px;
-  top: 0;
+.df .nav_bar .top .notice .icon {
+  width: 16px;
+  height: 16px;
+  fill: #929AAC;
 }
-.input_item .title {
-  display: inline-block;
-  margin-bottom: 10px;
-  order: 1;
+.df .nav_bar .top .notice.new:after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #BE1E28;
+  top: 2px;
+  right: 1px;
+  border-radius: 50%;
+}
+.df .nav_bar .center {
+  flex: 1 1 auto;
+}
+.df .nav_bar .center .menu_item {
+  padding: 0 0 0 65px;
+  position: relative;
+}
+.df .nav_bar .center .menu_item {
+  margin-bottom: 25px;
+}
+.df .nav_bar .center .menu_item:last-of-type {
+  margin-bottom: 0;
+}
+.df .nav_bar .center .menu_item.active:after {
+  content: "";
+  width: 40px;
+  height: 1px;
+  background-color: #ffffff;
+  position: absolute;
+  top: calc(50% - 0.5px);
+  left: 0;
+}
+.df .nav_bar .center .menu_item.active:before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: #ffffff;
+  transform: rotate(45deg);
+  position: absolute;
+  left: 37px;
+  top: calc(50% - 3px);
+}
+.df .nav_bar .center .menu_item.active .menu_link {
+  font-weight: 600;
+  color: #ffffff;
+}
+.df .nav_bar .center .menu_item.active .menu_link:hover {
+  color: #ffffff;
+}
+.df .nav_bar .center .menu_link {
+  font-weight: 500;
+  font-size: 16px;
+  color: #929AAC;
   transition: 0.4s;
 }
-.input_item .input {
-  order: 2;
-  padding: 10px 15px;
-  background-color: transparent;
-  border: 1px solid #3A3F49;
-  border-radius: 4px;
-  color: #929AAC;
-  font-size: 15px;
+.df .nav_bar .center .menu_link:hover {
+  color: #BE1E28;
 }
-.input_item .inputinput:active + .title, .input_item .input:focus + .title {
-  color: #ffffff;
+.df .nav_bar .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+  font-size: 13px;
+}
+.df .main_block {
+  position: relative;
+  height: 100px;
+  width: 100%;
 }

@@ -1,0 +1,39 @@
+.input_item{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  .required{
+    position: relative;
+    &::after{
+      content: "*";
+      color: $color_1;
+      position: absolute;
+      right: -10px;
+      top: 0;
+    }
+  }
+  .title{
+    display: inline-block;
+    margin-bottom: 10px;
+    order: 1;
+    transition: 0.4s;
+  }
+  .input{
+    order: 2;
+    padding: 10px 15px;
+    background-color: transparent;
+    border: 1px solid #3A3F49;
+    border-radius: 4px;
+    color: $color_text;
+    font-size: 15px;
+    &.error{
+      border: 1px solid $color_1;
+    }
+    &input:active,&:focus{
+      &+.title{
+        color: #ffffff;
+      }
+    }
+  }
+}
