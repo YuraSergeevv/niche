@@ -33,6 +33,7 @@ footer {
 
 html,
 body {
+  height: 100%;
   padding: 0;
   margin: 0;
   min-width: 320px;
@@ -101,6 +102,8 @@ body {
 
 .wrapper {
   width: 100%;
+  min-height: 100vh;
+  height: 100%;
   background-color: #1b202a;
 }
 
@@ -122,8 +125,9 @@ a:hover {
 
 .page {
   padding-top: 100px;
-  background: #BE1E28;
-  height: 770px;
+  height: 100vh;
+  background-color: #BE1E28;
+  margin: 0 auto 0 15px;
 }
 
 .input_item {
@@ -212,6 +216,114 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.df {
+  display: flex;
+  align-items: flex-start;
+}
+.df .block_340 {
+  flex: 0 0 340px;
+}
+.df .nav_bar {
+  position: fixed;
+  background: linear-gradient(180deg, #252B3B 0%, #1B202A 100%);
+  height: 100vh;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+}
+.df .nav_bar .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+  margin-bottom: 80px;
+}
+.df .nav_bar .top .notice {
+  position: relative;
+}
+.df .nav_bar .top .notice .icon {
+  width: 16px;
+  height: 16px;
+  fill: #929AAC;
+}
+.df .nav_bar .top .notice.new:after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: #BE1E28;
+  top: 2px;
+  right: 1px;
+  border-radius: 50%;
+}
+.df .nav_bar .center {
+  flex: 1 1 auto;
+}
+.df .nav_bar .center .menu_item {
+  padding: 0 0 0 65px;
+  position: relative;
+}
+.df .nav_bar .center .menu_item {
+  margin-bottom: 25px;
+}
+.df .nav_bar .center .menu_item:last-of-type {
+  margin-bottom: 0;
+}
+.df .nav_bar .center .menu_item.active:after {
+  content: "";
+  width: 40px;
+  height: 1px;
+  background-color: #ffffff;
+  position: absolute;
+  top: calc(50% - 0.5px);
+  left: 0;
+}
+.df .nav_bar .center .menu_item.active:before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: #ffffff;
+  transform: rotate(45deg);
+  position: absolute;
+  left: 37px;
+  top: calc(50% - 3px);
+}
+.df .nav_bar .center .menu_item.active .menu_link {
+  font-weight: 600;
+  color: #ffffff;
+}
+.df .nav_bar .center .menu_item.active .menu_link:hover {
+  color: #ffffff;
+}
+.df .nav_bar .center .menu_link {
+  font-weight: 500;
+  font-size: 16px;
+  color: #929AAC;
+  transition: 0.4s;
+}
+.df .nav_bar .center .menu_link:hover {
+  color: #BE1E28;
+}
+.df .nav_bar .bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+  font-size: 13px;
+}
+.df .main_block {
+  position: relative;
+  width: 100%;
+}
+.df .main_block .top_wrap {
+  background-color: #1b202a;
+  width: calc(100% - (340px));
+  top: 0;
+  left: 0;
+  margin-left: 340px;
+  position: fixed;
 }
 
 .row {
@@ -319,18 +431,16 @@ li.counter li:before {
   height: auto;
 }
 
-.main {
-  position: relative;
-}
 .main .center_wrap {
-  height: calc(100%);
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .top_wrap {
-  position: absolute;
+  background-color: #1b202a;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -362,54 +472,6 @@ li.counter li:before {
   align-items: center;
 }
 
-.langs {
-  border: 1px solid #3A3F49;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-.langs:hover .lang_block {
-  opacity: 1;
-  pointer-events: initial;
-}
-.langs .lang_block {
-  transition: 0.4s;
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-  margin-top: 5px;
-  top: 100%;
-  left: 0;
-  border: 1px solid #3A3F49;
-  border-radius: 4px;
-}
-.langs .lang_block:after {
-  content: "";
-  position: absolute;
-  bottom: 100%;
-  left: 0;
-  width: 100%;
-  height: 10px;
-}
-.langs .lang_block .lang:hover {
-  color: #ffffff;
-}
-.langs .lang_use {
-  color: #ffffff;
-}
-.langs .lang {
-  transition: 0.3s;
-  cursor: pointer;
-  font-size: 16px;
-  height: 32px;
-  width: 38px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .logo {
   display: block;
   width: 180px;
@@ -419,101 +481,4 @@ li.counter li:before {
   width: 100%;
   height: 100%;
   object-fit: contain;
-}
-
-.df {
-  display: flex;
-  align-items: flex-start;
-}
-.df .nav_bar {
-  background: linear-gradient(180deg, #252B3B 0%, #1B202A 100%);
-  height: 100vh;
-  flex: 0 0 340px;
-  display: flex;
-  flex-direction: column;
-}
-.df .nav_bar .top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 30px;
-  margin-bottom: 80px;
-}
-.df .nav_bar .top .notice {
-  position: relative;
-}
-.df .nav_bar .top .notice .icon {
-  width: 16px;
-  height: 16px;
-  fill: #929AAC;
-}
-.df .nav_bar .top .notice.new:after {
-  content: "";
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background-color: #BE1E28;
-  top: 2px;
-  right: 1px;
-  border-radius: 50%;
-}
-.df .nav_bar .center {
-  flex: 1 1 auto;
-}
-.df .nav_bar .center .menu_item {
-  padding: 0 0 0 65px;
-  position: relative;
-}
-.df .nav_bar .center .menu_item {
-  margin-bottom: 25px;
-}
-.df .nav_bar .center .menu_item:last-of-type {
-  margin-bottom: 0;
-}
-.df .nav_bar .center .menu_item.active:after {
-  content: "";
-  width: 40px;
-  height: 1px;
-  background-color: #ffffff;
-  position: absolute;
-  top: calc(50% - 0.5px);
-  left: 0;
-}
-.df .nav_bar .center .menu_item.active:before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  background-color: #ffffff;
-  transform: rotate(45deg);
-  position: absolute;
-  left: 37px;
-  top: calc(50% - 3px);
-}
-.df .nav_bar .center .menu_item.active .menu_link {
-  font-weight: 600;
-  color: #ffffff;
-}
-.df .nav_bar .center .menu_item.active .menu_link:hover {
-  color: #ffffff;
-}
-.df .nav_bar .center .menu_link {
-  font-weight: 500;
-  font-size: 16px;
-  color: #929AAC;
-  transition: 0.4s;
-}
-.df .nav_bar .center .menu_link:hover {
-  color: #BE1E28;
-}
-.df .nav_bar .bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 30px;
-  font-size: 13px;
-}
-.df .main_block {
-  position: relative;
-  height: 100px;
-  width: 100%;
 }

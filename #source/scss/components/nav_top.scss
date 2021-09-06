@@ -1,0 +1,113 @@
+.df{
+  display: flex;
+  align-items: flex-start;
+  .block_340{
+    flex: 0 0 $width_fix+px;
+
+  }
+  .nav_bar{
+    position: fixed;
+    background: linear-gradient(180deg, #252B3B 0%, #1B202A 100%);
+    height: 100vh;
+    width: $width_fix+px;
+    display: flex;
+    flex-direction: column;
+    .top{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 30px;
+      margin-bottom: 80px;
+      .notice{
+        position: relative;
+        .icon{
+          width: 16px;
+          height: 16px;
+          fill: #929AAC;
+        }
+        &.new{
+          &:after{
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background-color: $color_1;
+            top: 2px;
+            right: 1px;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+    .center{
+      flex: 1 1 auto;
+      .menu_item{
+        padding: 0 0 0 65px;
+        position: relative;
+      }
+      .menu_item{
+        margin-bottom: 25px;
+        &:last-of-type{
+          margin-bottom: 0;
+        }
+        &.active{
+          &:after{
+            content: '';
+            width: 40px;
+            height: 1px;
+            background-color:#ffffff;
+            position: absolute;
+            top: calc(50% - 0.5px);
+            left: 0;
+          }
+          &:before{
+            content: '';
+            width: 6px;
+            height: 6px;
+            background-color: #ffffff;
+            transform: rotate(45deg);
+            position: absolute;
+            left: 37px;
+            top: calc(50% - 3px);
+          }
+          .menu_link{
+            font-weight: 600;
+            color: #ffffff;
+            &:hover{
+              color: #ffffff;
+            }
+          }
+        }
+      }
+      .menu_link{
+        font-weight: 500;
+        font-size: 16px;
+        color: $color_text;
+        transition: 0.4s;
+        &:hover{
+          color:$color_1;
+        }
+      }
+    }
+    .bottom{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 30px;
+      font-size: 13px;
+    }
+  }
+  .main_block{
+    position: relative;
+    width: 100%;
+    .top_wrap{
+      background-color: #1b202a;
+      width: calc(100% - (#{$width_fix}px));
+      top: 0;
+      left: 0;
+      margin-left: $width_fix+px;
+      position: fixed;
+    }
+  }
+
+}
