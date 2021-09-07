@@ -131,7 +131,7 @@ a{
         display: flex;
         flex-direction: column;
         align-items: center;
-        .text{ 
+        .text{
             color: #ffffff;
             margin-bottom: 10px;
             opacity: 0;
@@ -176,10 +176,9 @@ a{
                 }
             }
         }
-        &.active{
+        &.active,&.last{
             .text{
                 opacity: 1;
-                pointer-events: initial;
             }
             .dote{
                 background-color: #ffffff;
@@ -188,6 +187,16 @@ a{
                    z-index: 5;
                 }
             }
+        }
+        &.last{
+            .text{
+                pointer-events: initial;
+            }
+        }
+    }
+    .temp{
+        &:last-of-type{
+            display: none;
         }
     }
 }

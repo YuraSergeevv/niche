@@ -610,14 +610,19 @@ li.counter li:before {
 .steps .step:last-of-type .dote::after {
   content: none;
 }
-.steps .step.active .text {
+.steps .step.active .text, .steps .step.last .text {
   opacity: 1;
-  pointer-events: initial;
 }
-.steps .step.active .dote {
+.steps .step.active .dote, .steps .step.last .dote {
   background-color: #ffffff;
 }
-.steps .step.active .dote::before, .steps .step.active .dote::after {
+.steps .step.active .dote::before, .steps .step.active .dote::after, .steps .step.last .dote::before, .steps .step.last .dote::after {
   background-color: #ffffff;
   z-index: 5;
+}
+.steps .step.last .text {
+  pointer-events: initial;
+}
+.steps .temp:last-of-type {
+  display: none;
 }
