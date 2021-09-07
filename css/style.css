@@ -104,6 +104,7 @@ body {
   width: 100%;
   min-height: 100vh;
   background-color: #1b202a;
+  padding-left: 340px;
 }
 
 a {
@@ -144,31 +145,89 @@ a:hover {
 .input_item .title_input {
   display: inline-block;
   margin-bottom: 10px;
-  order: 1;
+  order: -1;
   transition: 0.4s;
 }
-.input_item .input {
-  order: 2;
+.input_item .input_text {
   padding: 10px 15px;
   background-color: transparent;
   border: 1px solid #3A3F49;
   border-radius: 4px;
   color: #929AAC;
   font-size: 15px;
-}
-.input_item .input::placeholder {
   transition: 0.3s;
+}
+.input_item .input_text::placeholder {
+  transition: inherit;
   font-size: inherit;
   color: #5A5E66;
 }
-.input_item .input.error {
+.input_item .input_text.error {
   border: 1px solid #BE1E28;
 }
-.input_item .inputinput:active::placeholder, .input_item .input:focus::placeholder {
+.input_item .input_text:active, .input_item .input_text:focus {
+  color: #ffffff;
+}
+.input_item .input_text:active::placeholder, .input_item .input_text:focus::placeholder {
   opacity: 0;
 }
-.input_item .inputinput:active + .title_input, .input_item .input:focus + .title_input {
+.input_item .input_text:active + .title_input, .input_item .input_text:focus + .title_input {
   color: #ffffff;
+}
+.input_item input[type=file] {
+  display: none;
+}
+.input_item .input_file {
+  font-size: 15px;
+  padding: 10px 20px;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.input_item .input_file:hover {
+  color: #ffffff;
+}
+.input_item .input_inner {
+  display: flex;
+}
+.input_item .input_inner .input_radio {
+  display: flex;
+}
+.input_item .input_inner .input_radio + .input_radio {
+  margin-left: 20px;
+}
+.input_item .input_inner .input_radio input[type=radio] {
+  display: none;
+}
+.input_item .input_inner .input_radio label {
+  cursor: pointer;
+  padding-left: 15px;
+  position: relative;
+}
+.input_item .input_inner .input_radio label:after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #3A3F49;
+  border-radius: 50%;
+  left: 0;
+  top: calc(50% - 5px);
+}
+.input_item .input_inner .input_radio label:before {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  left: 3px;
+  top: calc(50% - 2px);
+  opacity: 0;
+}
+.input_item .input_inner .input_radio input[type=radio]:checked + label:before {
+  opacity: 1;
 }
 
 .langs {
@@ -221,14 +280,9 @@ a:hover {
   justify-content: center;
 }
 
-.df {
-  display: flex;
-  align-items: flex-start;
-}
-.df .block_340 {
-  flex: 0 0 340px;
-}
-.df .nav_bar {
+.nav_bar {
+  top: 0;
+  left: 0;
   position: fixed;
   background: linear-gradient(180deg, #252B3B 0%, #1B202A 100%);
   height: 100vh;
@@ -236,22 +290,22 @@ a:hover {
   display: flex;
   flex-direction: column;
 }
-.df .nav_bar .top {
+.nav_bar .top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 30px;
   margin-bottom: 80px;
 }
-.df .nav_bar .top .notice {
+.nav_bar .top .notice {
   position: relative;
 }
-.df .nav_bar .top .notice .icon {
+.nav_bar .top .notice .icon {
   width: 16px;
   height: 16px;
   fill: #929AAC;
 }
-.df .nav_bar .top .notice.new:after {
+.nav_bar .top .notice.new:after {
   content: "";
   position: absolute;
   width: 6px;
@@ -261,20 +315,20 @@ a:hover {
   right: 1px;
   border-radius: 50%;
 }
-.df .nav_bar .center {
+.nav_bar .center {
   flex: 1 1 auto;
 }
-.df .nav_bar .center .menu_item {
+.nav_bar .center .menu_item {
   padding: 0 0 0 65px;
   position: relative;
 }
-.df .nav_bar .center .menu_item {
+.nav_bar .center .menu_item {
   margin-bottom: 25px;
 }
-.df .nav_bar .center .menu_item:last-of-type {
+.nav_bar .center .menu_item:last-of-type {
   margin-bottom: 0;
 }
-.df .nav_bar .center .menu_item.active:after {
+.nav_bar .center .menu_item.active:after {
   content: "";
   width: 40px;
   height: 1px;
@@ -283,7 +337,7 @@ a:hover {
   top: calc(50% - 0.5px);
   left: 0;
 }
-.df .nav_bar .center .menu_item.active:before {
+.nav_bar .center .menu_item.active:before {
   content: "";
   width: 6px;
   height: 6px;
@@ -293,34 +347,35 @@ a:hover {
   left: 37px;
   top: calc(50% - 3px);
 }
-.df .nav_bar .center .menu_item.active .menu_link {
+.nav_bar .center .menu_item.active .menu_link {
   font-weight: 600;
   color: #ffffff;
 }
-.df .nav_bar .center .menu_item.active .menu_link:hover {
+.nav_bar .center .menu_item.active .menu_link:hover {
   color: #ffffff;
 }
-.df .nav_bar .center .menu_link {
+.nav_bar .center .menu_link {
   font-weight: 500;
   font-size: 16px;
   color: #929AAC;
   transition: 0.4s;
 }
-.df .nav_bar .center .menu_link:hover {
+.nav_bar .center .menu_link:hover {
   color: #BE1E28;
 }
-.df .nav_bar .bottom {
+.nav_bar .bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 30px;
   font-size: 13px;
 }
-.df .main_block {
+
+.main_block {
   position: relative;
   width: 100%;
 }
-.df .main_block .top_wrap {
+.main_block .top_wrap {
   background-color: #1b202a;
   width: calc(100% - (340px));
   top: 0;
@@ -505,7 +560,7 @@ li.counter li:before {
 .registration .row {
   align-items: center;
 }
-.registration .input {
+.registration .input_text {
   width: 100%;
 }
 
