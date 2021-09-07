@@ -147,16 +147,18 @@ a{
             &::after,&::before{
                 content: '';
                 position: absolute;
-                width: 40px;
+                width: 37.5px;
                 height: 1px;
                 background-color:#3A3F49;
                 top: calc(50% - 0.5px);
             }
             &::after{
                 left: 100%;
+                z-index: 5;
             }
             &::before{
                 right: 100%;
+                z-index: 4;
             }
            &:active{
 
@@ -184,7 +186,6 @@ a{
                 background-color: #ffffff;
                 &::before,&::after{
                     background-color: #ffffff;
-                   z-index: 5;
                 }
             }
         }

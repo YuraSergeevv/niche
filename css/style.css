@@ -593,16 +593,18 @@ li.counter li:before {
 .steps .step .dote::after, .steps .step .dote::before {
   content: "";
   position: absolute;
-  width: 40px;
+  width: 37.5px;
   height: 1px;
   background-color: #3A3F49;
   top: calc(50% - 0.5px);
 }
 .steps .step .dote::after {
   left: 100%;
+  z-index: 5;
 }
 .steps .step .dote::before {
   right: 100%;
+  z-index: 4;
 }
 .steps .step:first-of-type .dote::before {
   content: none;
@@ -618,7 +620,6 @@ li.counter li:before {
 }
 .steps .step.active .dote::before, .steps .step.active .dote::after, .steps .step.last .dote::before, .steps .step.last .dote::after {
   background-color: #ffffff;
-  z-index: 5;
 }
 .steps .step.last .text {
   pointer-events: initial;
