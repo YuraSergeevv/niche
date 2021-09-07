@@ -55,6 +55,8 @@
     border-radius: 4px;
     cursor: pointer;
     transition: 0.4s;
+    min-width: 185px;
+    text-align: center;
     &:hover{
       color: #ffffff;
     }
@@ -74,6 +76,7 @@
         cursor: pointer;
         padding-left: 15px;
         position: relative;
+        color: #ffffff;
         &:after{
           content: '';
           position: absolute;

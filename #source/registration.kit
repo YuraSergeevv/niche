@@ -65,7 +65,7 @@
                 </div>
             </div>
             <div class="container page">
-                <div class="content_step_1">
+                <div class="content_step content_step_1">
                     <div class="row">
                         <div class="column">
                             <div class="title">Registration</div>
@@ -73,10 +73,10 @@
                         </div>
                         <div class="column">
                             <div class="steps">
-                                <div class="step_1 step last"> <a href="#" class="text">step 1</a> <span
+                                <div class="step_1 step active"> <a href="#" class="text">step 1</a> <span
                                         class="dote"></span>
                                 </div>
-                                <div class="step_2 step active"> <a href="#" class="text">step 2</a> <span class="dote"></span>
+                                <div class="step_2 step"> <a href="#" class="text">step 2</a> <span class="dote"></span>
                                 </div>
                                 <div class="step_3 step"> <a href="#" class="text">step 3</a> <span class="dote"></span>
                                 </div>
@@ -87,49 +87,145 @@
                             </div>
                         </div>
                     </div>
-                    <div class="column inputs_block">
-                        <div class="input_item">
-                            <input class="input_text" type="text">
-                            <span class="title_input required">Company name*</span>
+                    <div class="input_item">
+                        <input class="input_text" type="text">
+                        <span class="title_input required">Company name</span>
+                    </div>
+                    <div class="input_item">
+                        <input class="input_text" type="text">
+                        <span class="title_input required">Company address</span>
+                    </div>
+                    <div class="input_item">
+                        <input class="input_text" type="text" placeholder="https://">
+                        <span class="title_input">Company website</span>
+                    </div>
+                    <div class="input_item">
+                        <input class="input_text" type="text">
+                        <span class="title_input required">Product description</span>
+                    </div>
+                    <div class="input_item">
+                        <div class="input_file btb_file-js" data-text="choose file to upload">choose file to upload
                         </div>
-                        <div class="input_item">
-                            <input class="input_text" type="text">
-                            <span class="title_input required">Company address*</span>
+                        <input class="input file-js" type="file">
+                        <span class="title_input">Product presentation (in English)</span>
+                    </div>
+                    <div class="input_item">
+                        <div class="input_inner">
+                            <div class="input_radio">
+                                <input type="radio" id="yes" name="radio1" checked="chek">
+                                <label for="yes">Yes</label>
+                            </div>
+                            <div class="input_radio">
+                                <input type="radio" id="no" name="radio1">
+                                <label for="no">No</label>
+                            </div>
                         </div>
-                        <div class="input_item">
-                            <input class="input_text" type="text" placeholder="https://">
-                            <span class="title_input">Company website</span>
+                        <span class="title_input required">Does your company have an export registration?</span>
+                    </div>
+                    <div class="input_item">
+                        <input class="input_text" type="text">
+                        <span class="title_input required">Product description</span>
+                    </div>
+
+                    <div class="button_row">
+                        <div class="button_1">Prev</div>
+                        <div class="button_2">Next</div>
+                    </div>
+                </div>
+                <div class="content_step content_step_2">
+                    <div class="row">
+                        <div class="column">
+                            <div class="title">Registration</div>
+                            <div class="subtitle">Please download the contract and fill in your information:</div>
                         </div>
-                        <div class="input_item">
-                            <input class="input_text" type="text">
-                            <span class="title_input required">Product description</span>
-                        </div>
-                        <div class="input_item">
-                            <div class="input_file btb_file-js" >choose file to upload</div>
-                            <input class="input file-js" type="file">
-                            <span class="title_input">Product presentation (in English)</span>
-                        </div>
-                        <div class="input_item">
-                            <div class="input_inner">
-                                <div class="input_radio">
-                                    <input type="radio" id="yes" name="radio1" checked="chek">
-                                    <label for="yes">Yes</label>
+                        <div class="column">
+                            <div class="steps">
+                                <div class="step_1 step last"> <a href="#" class="text">step 1</a> <span
+                                        class="dote"></span>
                                 </div>
-                                <div class="input_radio">
-                                    <input type="radio" id="no" name="radio1">
-                                    <label for="no">No</label>
+                                <div class="step_2 step active"> <a href="#" class="text">step 2</a> <span
+                                        class="dote"></span>
+                                </div>
+                                <div class="step_3 step"> <a href="#" class="text">step 3</a> <span class="dote"></span>
+                                </div>
+                                <div class="step_4 step"> <a href="#" class="text">step 4</a> <span class="dote"></span>
+                                </div>
+                                <div class="step_5 step"> <a href="#" class="text">step 5</a> <span class="dote"></span>
                                 </div>
                             </div>
-                            <span class="title_input required">Does your company have an export registration?</span>
-                        </div>
-                        <div class="input_item">
-                            <input class="input_text" type="text">
-                            <span class="title_input required">Product description</span>
                         </div>
                     </div>
-                </div><div class="content_step_1">
+                    <div class="input_item">
+                        <div class="input_file btb_file-js" data-text="download">download</div>
+                        <input class="input file-js" type="file">
+                        <span class="title_input">Download a contract</span>
+                    </div>
+                    <div class="input_item">
+                        <div class="input_file btb_file-js" data-text="choose file to upload">choose file to upload
+                        </div>
+                        <input class="input file-js" type="file">
+                        <span class="title_input">Then sign it and upload it here</span>
+                    </div>
+                    <div class="button_row">
+                        <div class="button_1">Prev</div>
+                        <div class="button_2">Next</div>
+                    </div>
+                </div>
+                <div class="content_step content_step_3  active">
+                    <div class="row">
+                        <div class="column">
+                            <div class="title">Registration</div>
+                            <div class="subtitle">Please pick a niche rack first:</div>
+                        </div>
+                        <div class="column">
+                            <div class="steps">
+                                <div class="step_1 step last"> <a href="#" class="text">step 1</a> <span
+                                        class="dote"></span>
+                                </div>
+                                <div class="step_2 step last"> <a href="#" class="text">step 2</a> <span
+                                        class="dote"></span>
+                                </div>
+                                <div class="step_3 step active"> <a href="#" class="text">step 3</a> <span
+                                        class="dote"></span>
+                                </div>
+                                <div class="step_4 step"> <a href="#" class="text">step 4</a> <span class="dote"></span>
+                                </div>
+                                <div class="step_5 step"> <a href="#" class="text">step 5</a> <span class="dote"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="title_text">Entrance - 1</div>
+                    <div class="tabel">
+                        <div class="column max-width">
+                            <input type="radio" id='rack_A' name="rack">
+                            <label for="rack_A">Rack “A”</label>
+                        </div>
+                        <div class="column flex-start">
+                            <input type="radio" id='rack_B' name="rack">
+                            <label for="rack_B">Rack “B”</label>
+                            <input type="radio" id='rack_D' name="rack">
+                            <label for="rack_D">Rack “D”</label>
+                            <input type="radio" id='rack_F' name="rack">
+                            <label for="rack_F">Rack “F”</label>
+                        </div>
+
+                        <div class="column flex-end">
+                            <input type="radio" id='rack_C' name="rack">
+                            <label for="rack_C">Rack “C”</label>
+                            <input type="radio" id='rack_E' name="rack">
+                            <label for="rack_E">Rack “E”</label>
+                            <input type="radio" id='rack_G' name="rack">
+                            <label for="rack_G">Rack “G”</label>
+                        </div>
+                    </div>
+                    <div class="button_row">
+                        <div class="button_1">Prev</div>
+                        <div class="button_2">Next</div>
+                    </div>
+                </div>
             </div>
-            </div>
+
 
         </div>
 

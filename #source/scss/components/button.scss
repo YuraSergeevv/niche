@@ -1,0 +1,19 @@
+.button_1,
+.button_2{
+    display: inline-block;
+    min-width: 185px;
+    text-align: center;
+    padding: 10px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 4px;;
+}
+.button_1{
+    border: 2px solid #FFFFFF;
+}
+.button_2{
+    border: 2px solid $color_1;
+    background-color:$color_1;
+}
