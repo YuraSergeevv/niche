@@ -146,19 +146,19 @@ a:hover {
   display: inline-block;
   margin-bottom: 10px;
   order: -1;
-  transition: 0.4s;
+  transition: 0.4s color;
 }
 .input_item .input_text {
+  width: 100%;
   padding: 10px 15px;
   background-color: transparent;
   border: 1px solid #3A3F49;
   border-radius: 4px;
   color: #929AAC;
   font-size: 15px;
-  transition: 0.3s;
 }
 .input_item .input_text::placeholder {
-  transition: inherit;
+  transition: 0.3s;
   font-size: inherit;
   color: #5A5E66;
 }
@@ -183,7 +183,7 @@ a:hover {
   border: 1px solid #ffffff;
   border-radius: 4px;
   cursor: pointer;
-  transition: 0.4s;
+  transition: 0.4s color;
   min-width: 185px;
   text-align: center;
 }
@@ -389,7 +389,7 @@ a:hover {
 
 .button_1,
 .button_2 {
-  display: inline-block;
+  display: block;
   min-width: 185px;
   text-align: center;
   padding: 10px 20px;
@@ -398,6 +398,7 @@ a:hover {
   font-weight: 700;
   cursor: pointer;
   border-radius: 4px;
+  transition: 0.4s;
 }
 
 .button_1 {
@@ -408,7 +409,6 @@ a:hover {
   border: 2px solid #BE1E28;
   background-color: #BE1E28;
 }
-
 .row {
   display: flex;
 }
@@ -514,11 +514,29 @@ li.counter li:before {
   height: auto;
 }
 
-.main .center_wrap {
+.main .form_wrap {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.main .form_inner {
+  padding: 20px 50px;
+  width: 25%;
+  border-radius: 4px;
+  border: 1px solid #3A3F49;
+}
+.main .form_inner .title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.main .form_inner input[type=submit] {
+  margin: 0 auto;
+}
+.main .form_inner .link_row {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 0;
 }
 
 .top_wrap {
@@ -555,6 +573,11 @@ li.counter li:before {
   align-items: center;
 }
 
+.disable {
+  pointer-events: none;
+  opacity: 0;
+}
+
 .logo {
   display: block;
   width: 180px;
@@ -564,6 +587,10 @@ li.counter li:before {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.main.wrapper {
+  padding: 0;
 }
 
 .title {
@@ -654,6 +681,7 @@ li.counter li:before {
   background-color: #ffffff;
 }
 .steps .step.last .text {
+  cursor: pointer;
   transition: 0.4s;
   pointer-events: initial;
 }
@@ -671,14 +699,13 @@ li.counter li:before {
 .content_step.active {
   display: block;
 }
+.content_step .input_block {
+  width: 50%;
+}
 .content_step .button_row {
-  padding: 10px 0;
+  padding: 40px 0;
   display: flex;
   justify-content: space-between;
-}
-
-.content_step_1 .input_text {
-  width: 50%;
 }
 
 .content_step_3 .title_text {
@@ -727,10 +754,81 @@ li.counter li:before {
   text-align: center;
   margin: 0 10px 40px;
 }
+.content_step_3 .tabel .column label span {
+  color: #ffffff;
+}
 .content_step_3 .tabel .column label:last-of-type {
   margin-bottom: 0;
 }
 .content_step_3 .tabel .column input[type=radio]:checked + label {
   color: #ffffff;
   border: 1px solid #BE1E28;
+}
+
+.content_step_4 .tabel {
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+}
+.content_step_4 .tabel .opacity {
+  opacity: 0;
+}
+.content_step_4 .tabel .row {
+  display: flex;
+  align-items: stretch;
+}
+.content_step_4 .tabel .row.main .column {
+  background: rgba(58, 63, 73, 0.2);
+  padding-top: 5px;
+  padding-bottom: 5px;
+  color: #ffffff;
+  min-width: initial;
+  min-height: initial;
+}
+.content_step_4 .tabel .column {
+  display: flex;
+  cursor: pointer;
+  transition: 0.4s;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  min-height: 100px;
+  padding: 20px;
+  border: 1px solid #3A3F49;
+  font-weight: 300;
+  font-size: 18px;
+}
+.content_step_4 .tabel .column:hover {
+  color: #ffffff;
+}
+.content_step_4 .tabel .column:last-of-type {
+  width: min-content;
+  padding: 0 17px;
+  min-width: initial;
+  min-height: initial;
+  background: rgba(58, 63, 73, 0.2);
+}
+.content_step_4 .tabel .column.main {
+  min-width: initial;
+  min-height: initial;
+  padding: 11px 11px;
+  width: min-content;
+  background: rgba(58, 63, 73, 0.2);
+}
+.content_step_4 .tabel .column.reserved {
+  pointer-events: none;
+  background: rgba(58, 63, 73, 0.2);
+}
+.content_step_4 .tabel .column.reserved .number {
+  display: none;
+}
+.content_step_4 .tabel .column.reserved::after {
+  content: "reserved";
+}
+.content_step_4 .tabel input[type=radio] {
+  display: none;
+}
+.content_step_4 .tabel input[type=radio]:checked + .column {
+  font-weight: 500;
+  color: #BE1E28;
 }

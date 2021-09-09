@@ -17,18 +17,18 @@
     display: inline-block;
     margin-bottom: 10px;
     order: -1;
-    transition: 0.4s;
+    transition: 0.4s color;
   }
   .input_text{
+    width: 100%;
     padding: 10px 15px;
     background-color: transparent;
     border: 1px solid #3A3F49;
     border-radius: 4px;
     color: $color_text;
     font-size: 15px;
-    transition: 0.3s;
     &::placeholder{
-      transition: inherit;
+      transition: 0.3s;
       font-size: inherit;
       color: #5A5E66;
     }
@@ -54,7 +54,7 @@
     border: 1px solid #ffffff;
     border-radius: 4px;
     cursor: pointer;
-    transition: 0.4s;
+    transition: 0.4s color;
     min-width: 185px;
     text-align: center;
     &:hover{
