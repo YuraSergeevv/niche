@@ -176,9 +176,6 @@ a{
                 right: 100%;
                 z-index: 4;
             }
-           &:active{
-
-           }
         }
         &:first-of-type{
             .dote{
@@ -193,6 +190,9 @@ a{
                     content: none;
                 }
             }
+        }
+         &.active{
+            pointer-events: none;
         }
         &.active,&.last{
             .text{

@@ -18,6 +18,18 @@ window.onload = function () {
 
     }
 
+    let steps = document.querySelectorAll('.step');
+    for (const step of steps) {
+        step.addEventListener('click', function (e) {
+            let stepNum = step.classList[0].split('_')[1];
+            let stepContent = step.closest('.content_step');
+            stepContent.classList.remove('active');
+            stepContent = document.getElementById(stepNum);
+            stepContent.classList.add('active');
+        })
+    }
+
+
     let NButtons = document.querySelectorAll('.next_js');
     for (const Button of NButtons) {
         Button.addEventListener('click', function () {

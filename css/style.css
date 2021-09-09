@@ -671,6 +671,9 @@ li.counter li:before {
 .steps .step:last-of-type .dote::after {
   content: none;
 }
+.steps .step.active {
+  pointer-events: none;
+}
 .steps .step.active .text, .steps .step.last .text {
   opacity: 1;
 }
