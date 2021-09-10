@@ -232,6 +232,66 @@ a:hover {
 .input_item .input_inner .input_radio input[type=radio]:checked + label:before {
   opacity: 1;
 }
+.input_item .select {
+  position: relative;
+  margin-bottom: 20px;
+  width: 300px;
+}
+.input_item .select__header {
+  border: 1px solid #c7c7c7;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  height: 60px;
+  padding-left: 10px;
+}
+.input_item .select__current {
+  font-size: 18px;
+  padding: 8px;
+}
+.input_item .select__icon {
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  height: 12px;
+  margin-left: auto;
+  margin-right: 15px;
+  text-align: center;
+  width: 12px;
+  background-image: url(../images/down-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.input_item .select__body {
+  border: 1px solid #c7c7c7;
+  border-radius: 8px;
+  background-color: #ffffff;
+  border-top: 0;
+  display: none;
+  left: 0;
+  position: absolute;
+  right: 0;
+  z-index: 5;
+  top: 100%;
+}
+.input_item .select__item {
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 8px;
+}
+.input_item .select__item:hover {
+  background-color: #f2f2f2;
+}
+.input_item .is-active .select__body {
+  display: block;
+}
+.input_item .is-active .select__icon {
+  background-image: url(../images/up-arrow.svg);
+}
 
 .langs {
   border: 1px solid #3A3F49;
