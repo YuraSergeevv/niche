@@ -2,18 +2,61 @@
   top: 0;
   left: 0;
   position: fixed;
-  background: linear-gradient(180deg, #252B3B 0%, #1B202A 100%);
+  background: linear-gradient(180deg, #252b3b 0%, #1b202a 100%);
   height: 100vh;
-  width: $width_fix+px;
+  width: $width_fix + px;
   display: flex;
   flex-direction: column;
 
+  @media (hover: none) and (pointer: coarse), (max-width: 1024px) {
+    width: 100%;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 120;
+  }
+  .df {
+    display: flex;
+    align-items: center;
+  }
+  .close_menu {
+    display: none;
+    margin-left: 15px;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    transform: rotate(45deg);
+    cursor: pointer;
+    @media (hover: none) and (pointer: coarse), (max-width: 1024px) {
+      display: block;
+    }
+    &::after,
+    &:before {
+      content: "";
+      background-color: #ffffff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background-color: #ffffff;
+      transform: translate(-50%, -50%);
+    }
+    &::after {
+      width: 100%;
+      height: 1px;
+    }
+    &::before {
+      width: 1px;
+      height: 100%;
+    }
+  }
   .top {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 20px 30px;
     margin-bottom: 80px;
+    @media (max-width: 767px) {
+      padding: 20px 10px;
+    }
 
     .notice {
       position: relative;
@@ -21,12 +64,12 @@
       .icon {
         width: 16px;
         height: 16px;
-        fill: #929AAC;
+        fill: #929aac;
       }
 
       &.new {
         &:after {
-          content: '';
+          content: "";
           position: absolute;
           width: 6px;
           height: 6px;
@@ -45,6 +88,10 @@
     .menu_item {
       padding: 0 0 0 65px;
       position: relative;
+      @media (hover: none) and (pointer: coarse), (max-width: 1024px) {
+        padding: 0;
+        text-align: center;
+      }
     }
 
     .menu_item {
@@ -56,7 +103,7 @@
 
       &.active {
         &:after {
-          content: '';
+          content: "";
           width: 40px;
           height: 1px;
           background-color: #ffffff;
@@ -66,7 +113,7 @@
         }
 
         &:before {
-          content: '';
+          content: "";
           width: 6px;
           height: 6px;
           background-color: #ffffff;
@@ -75,7 +122,12 @@
           left: 37px;
           top: calc(50% - 3px);
         }
-
+        @media (hover: none) and (pointer: coarse), (max-width: 1024px) {
+          &::after,
+          &::before {
+            content: none;
+          }
+        }
         .menu_link {
           font-weight: 600;
           color: #ffffff;
@@ -92,6 +144,9 @@
       font-size: 16px;
       color: $color_text;
       transition: 0.4s;
+      @media (max-width: 767px) {
+        font-size: 14px;
+      }
 
       &:hover {
         color: $color_1;
@@ -105,6 +160,9 @@
     justify-content: space-between;
     padding: 20px 30px;
     font-size: 13px;
+    @media (max-width: 767px) {
+      padding: 20px 10px;
+    }
   }
 }
 
@@ -112,12 +170,46 @@
   position: relative;
   width: 100%;
   .top_wrap {
+    font-size: 16px;
     background-color: #1b202a;
     width: calc(100% - (#{$width_fix}px));
     top: 0;
     left: 0;
-    margin-left: $width_fix+px;
+    margin-left: $width_fix + px;
     position: fixed;
+    z-index: 100;
+    @media (hover: none) and (pointer: coarse), (max-width: 1024px) {
+      width: 100%;
+      margin-left: 0;
+    }
+    @media (max-width: 767px) {
+      font-size: 14px;
+    }
+  }
+  .user {
+    margin-left: 50px;
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    @media (hover: none) and (pointer: coarse), (max-width: 1024px) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .photo {
+      width: 32px;
+      height: 32px;
+      border-radius: 50px;
+      display: block;
+      background-color: #ffffff;
+      margin-right: 10px;
+      object-fit: contain;
+    }
+  }
+  .log {
+    color: #ffffff;
+    transition: 0.4s;
+    &:hover {
+      color: $color_1;
+    }
   }
 }
-

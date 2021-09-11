@@ -21,11 +21,21 @@
                 <a href="#" class="logo">
                     <img src="img/logo.png" alt="">
                 </a>
-                <a href="#" class="notice new">
-                    <svg class="icon">
-                        <use xlink:href="img/svg/sprite.svg#notification"></use>
-                    </svg>
-                </a>
+                <div class="df">
+                    <div class="langs">
+                        <div class="lang lang_use">En</div>
+                        <div class="lang_block">
+                            <div class="lang">Ua</div>
+                            <div class="lang">Ru</div>
+                        </div>
+                    </div>
+                    <a href="#" class="notice new">
+                        <svg class="icon">
+                            <use xlink:href="img/svg/sprite.svg#notification"></use>
+                        </svg>
+                    </a>
+                    <div class="close_menu"></div>
+                </div>
             </div>
             <div class="center">
                 <ul class="menu_list">
@@ -46,6 +56,9 @@
             <div class="top_wrap">
                 <div class="top_inner">
                     <div class="left">
+                        <a href="#" class="logo">
+                            <img src="img/logo.png" alt="">
+                        </a>
                         <div class="text">Wholesale Trade Marketplace</div>
                     </div>
                     <div class="right">
@@ -57,18 +70,18 @@
                             </div>
                         </div>
                         <div class="user">
-                            <img class="photo" src="" alt="">
+                            <img class="photo" src="img/user.jpg" alt="">
                             <span class="name">Hi, client</span>
                         </div>
-                        <a href="#" class="log">Log in</a>
+                        <a href="#" class="log">Log out</a>
                     </div>
                 </div>
             </div>
             <div class="container page">
                 <div id="1" class="content_step content_step_1 active ">
+                    <div class="title">Registration</div>
                     <div class="row">
                         <div class="column">
-                            <div class="title">Registration</div>
                             <div class="subtitle"> Fill in this form please and press “Submit”</div>
                         </div>
                         <div class="column">
@@ -92,21 +105,21 @@
                         </div>
                     </div>
                     <div class="input_block">
-                        <div class="input_item">
+                        <div class="input_item required">
                             <input class="input_text" type="text">
-                            <span class="title_input required">Company name</span>
+                            <span class="title_input">Company name</span>
                         </div>
                         <div class="input_item">
-                            <input class="input_text" type="text">
-                            <span class="title_input required">Company address</span>
+                            <input class="input_text required" type="text">
+                            <span class="title_input">Company address</span>
                         </div>
                         <div class="input_item">
                             <input class="input_text" type="text" placeholder="https://">
                             <span class="title_input">Company website</span>
                         </div>
-                        <div class="input_item">
+                        <div class="input_item required">
                             <input class="input_text" type="text">
-                            <span class="title_input required">Product description</span>
+                            <span class="title_input">Product description</span>
                         </div>
                         <div class="input_item">
                             <div class="input_file btb_file-js" data-text="choose file to upload">choose file to upload
@@ -114,7 +127,7 @@
                             <input class="input file-js" type="file">
                             <span class="title_input">Product presentation (in English)</span>
                         </div>
-                        <div class="input_item">
+                        <div class="input_item required">
                             <div class="input_inner">
                                 <div class="input_radio">
                                     <input type="radio" id="yes" name="radio1" checked="chek">
@@ -125,35 +138,56 @@
                                     <label for="no">No</label>
                                 </div>
                             </div>
-                            <span class="title_input required">Does your company have an export registration?</span>
+                            <span class="title_input">Does your company have an export registration?</span>
                         </div>
+                    </div>
+                    <div class="row_select">
+                        <div class="column select_in">
+                            <div class="input_item required">
+                                <div class="select">
+                                    <div class="select__header">
+                                        <span class="select__current">select multiple options</span>
+                                        <div class="select__icon"></div>
+                                    </div>
 
-                        <div class="input_item">
-                            <div class="select">
-                                <div class="select__header">
-                                    <span class="select__current">Баня из бруса 6х4</span>
-                                    <div class="select__icon"></div>
+                                    <div class="select__body select__city">
+                                        <input type="checkbox" name="Albania" id="Albania">
+                                        <label for="Albania" class="select__item">Albania</label>
+
+                                        <input type="checkbox" name="Algeria" id="Algeria">
+                                        <label for="Algeria" class="select__item">Algeria</label>
+
+                                        <input type="checkbox" name="Andorra" id="Andorra">
+                                        <label for="Andorra" class="select__item">Andorra</label>
+
+                                        <input type="checkbox" name="Armenia" id="Armenia">
+                                        <label for="Armenia" class="select__item">Armenia</label>
+
+                                        <input type="checkbox" name="Austria" id="Austria">
+                                        <label for="Austria" class="select__item">Austria</label>
+
+                                        <input type="checkbox" name="City_1" id="City_1">
+                                        <label for="City_1" class="select__item">City_1</label>
+
+                                        <input type="checkbox" name="City_2" id="City_2">
+                                        <label for="City_2" class="select__item">City_2</label>
+
+                                        <input type="checkbox" name="City_3" id="City_3">
+                                        <label for="City_3" class="select__item">City_3</label>
+
+                                        <input type="checkbox" name="City_4" id="City_4">
+                                        <label for="City_4" class="select__item">City_4</label>
+
+                                        <input type="checkbox" name="City_5" id="City_5">
+                                        <label for="City_5" class="select__item">City_5</label>
+
+
+                                    </div>
                                 </div>
-
-                                <div class="select__body">
-                                    <input type="checkbox" name="Albania" id="Albania">
-                                    <label for="Albania" class="select__item">Albania</label>
-
-                                    <input type="checkbox" name="Algeria" id="Algeria">
-                                    <label for="Algeria" class="select__item">Algeria</label>
-
-                                    <input type="checkbox" name="Andorra" id="Andorra">
-                                    <label for="Andorra" class="select__item">Andorra</label>
-
-                                    <input type="checkbox" name="Armenia" id="Armenia">
-                                    <label for="Armenia" class="select__item">Armenia</label>
-
-                                    <input type="checkbox" name="Austria" id="Austria">
-                                    <label for="Austria" class="select__item">Austria</label>
-                                </div>
+                                <span class="title_input">Product description</span>
                             </div>
-                            <span class="title_input required">Product description</span>
                         </div>
+                        <div class="column select_out"></div>
                     </div>
                     <div class="button_row">
                         <button class="button_1 prev_js disable">Prev</button>
@@ -161,9 +195,9 @@
                     </div>
                 </div>
                 <div id="2" class="content_step content_step_2 ">
+                    <div class="title">Registration</div>
                     <div class="row">
                         <div class="column">
-                            <div class="title">Registration</div>
                             <div class="subtitle">Please download the contract and fill in your information:</div>
                         </div>
                         <div class="column">
@@ -203,9 +237,9 @@
                     </div>
                 </div>
                 <div id="3" class="content_step content_step_3  ">
+                    <div class="title">Registration</div>
                     <div class="row">
                         <div class="column">
-                            <div class="title">Registration</div>
                             <div class="subtitle">Please pick a niche rack first:</div>
                         </div>
                         <div class="column">
@@ -258,9 +292,9 @@
                     </div>
                 </div>
                 <div id="4" class="content_step content_step_4">
+                    <div class="title">Registration</div>
                     <div class="row">
                         <div class="column">
-                            <div class="title">Registration</div>
                             <div class="subtitle">Please pick a niche in RACK !!F!!</div>
                         </div>
                         <div class="column">
@@ -370,9 +404,9 @@
                     </div>
                 </div>
                 <div id="5" class="content_step content_step_5 ">
+                    <div class="title">Registration</div>
                     <div class="row">
                         <div class="column">
-                            <div class="title">Registration</div>
                             <div class="subtitle">Please pick a niche in RACK !!F!!</div>
                             <div class="subtitle">After you fill in your information our manager will form an invoice
                                 for you.</div>
@@ -399,17 +433,17 @@
                     </div>
                     <div class="input_block">
                         <div class="subtitle">Fill in the form about now you want to sell your product:</div>
-                        <div class="input_item">
+                        <div class="input_item required">
                             <input class="input_text" type="text">
-                            <span class="title_input required">Name of the product</span>
+                            <span class="title_input">Name of the product</span>
                         </div>
-                        <div class="input_item">
+                        <div class="input_item required">
                             <input class="input_text" type="text">
-                            <span class="title_input required">Package</span>
+                            <span class="title_input ">Package</span>
                         </div>
-                        <div class="input_item">
+                        <div class="input_item required">
                             <input class="input_text" type="text">
-                            <span class="title_input required">Price you want to sell at:</span>
+                            <span class="title_input ">Price you want to sell at:</span>
                         </div>
                     </div>
                     <div class="button_row">

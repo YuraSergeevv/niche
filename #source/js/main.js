@@ -52,6 +52,7 @@ window.onload = function () {
     let select = function () {
         let selectHeader = document.querySelectorAll('.select__header');
         let selectItem = document.querySelectorAll('.select__item');
+        let selectOut = document.querySelector('.select_out');
 
         selectHeader.forEach(item => {
             item.addEventListener('click', selectToggle)
@@ -66,12 +67,16 @@ window.onload = function () {
         }
 
         function selectChoose() {
-            let text = this.innerText,
-                select = this.closest('.select'),
-                currentText = select.querySelector('.select__current');
-            currentText.innerText = text;
-            select.classList.remove('is-active');
+            this.previousElementSibling.addEventListener('change', selectCheck)
+        }
 
+        function selectCheck() {
+            if (this.checked) {
+                selectOut.insertAdjacentHTML('beforeend', `<div  class='city_current'>${this.id}<label for='${this.id}'></label></div>`)
+            }
+            else {
+                selectOut.querySelector(`label[for=${this.id}]`).closest('.city_current').remove();
+            }
         }
 
     };

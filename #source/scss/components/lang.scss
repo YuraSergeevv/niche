@@ -1,5 +1,5 @@
-.langs{
-  border: 1px solid #3A3F49;
+.langs {
+  border: 1px solid #3a3f49;
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -7,13 +7,13 @@
   position: relative;
   height: 32px;
   width: 38px;
-  &:hover{
-    .lang_block{
+  &:hover {
+    .lang_block {
       opacity: 1;
       pointer-events: initial;
     }
   }
-  .lang_block{
+  .lang_block {
     transition: 0.4s;
     opacity: 0;
     pointer-events: none;
@@ -21,26 +21,26 @@
     margin-top: 5px;
     top: 100%;
     left: 0;
-    border: 1px solid #3A3F49;
+    border: 1px solid #3a3f49;
     border-radius: 4px;
-    &:after{
-      content: '';
+    &:after {
+      content: "";
       position: absolute;
       bottom: 100%;
       left: 0;
       width: 100%;
       height: 10px;
     }
-    .lang{
-      &:hover{
+    .lang {
+      &:hover {
         color: #ffffff;
       }
     }
   }
-  .lang_use{
+  .lang_use {
     color: #ffffff;
   }
-  .lang{
+  .lang {
     transition: 0.3s;
     cursor: pointer;
     font-size: 16px;
@@ -49,5 +49,25 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+}
+
+.nav_bar {
+  .langs {
+    display: none;
+    margin-right: 15px;
+    @media (hover: none) and (pointer: coarse), (max-width: 1024px) {
+      display: block;
+    }
+  }
+}
+
+.main_block {
+  .langs {
+    display: block;
+    margin-right: 15px;
+    @media (hover: none) and (pointer: coarse), (max-width: 1024px) {
+      display: none;
+    }
   }
 }

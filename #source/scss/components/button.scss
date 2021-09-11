@@ -1,5 +1,5 @@
 .button_1,
-.button_2{
+.button_2 {
     display: block;
     min-width: 185px;
     text-align: center;
@@ -8,15 +8,18 @@
     text-decoration: none;
     font-weight: 700;
     cursor: pointer;
-    border-radius: 4px;;
+    border-radius: 4px;
     transition: 0.4s;
+    @media (max-width: 767px) {
+        min-width: initial;
+    }
 }
-.button_1{
-    border: 2px solid #FFFFFF;
+.button_1 {
+    border: 2px solid #ffffff;
 }
-.button_2{
+.button_2 {
     border: 2px solid $color_1;
-    background-color:$color_1;
-    &:hover{
+    background-color: $color_1;
+    &:hover {
     }
 }
