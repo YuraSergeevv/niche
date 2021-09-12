@@ -75,14 +75,14 @@
                         </div>
                         <a href="#" class="log">Log out</a>
                     </div>
+                    <div class="button_burger"><span></span></div>
                 </div>
             </div>
             <div class="container page">
                 <div id="1" class="content_step content_step_1 active ">
-                    <div class="title">Registration</div>
                     <div class="row">
                         <div class="column">
-                            <div class="subtitle"> Fill in this form please and press “Submit”</div>
+                            <div class="title">Registration</div>
                         </div>
                         <div class="column">
                             <div class="steps">
@@ -104,14 +104,15 @@
                             </div>
                         </div>
                     </div>
+                    <div class="subtitle"> Fill in this form please and press “Submit”</div>
                     <div class="input_block">
                         <div class="input_item required">
                             <input class="input_text" type="text">
-                            <span class="title_input">Company name</span>
+                            <span class="title_input">Company name <span></span></span>
                         </div>
-                        <div class="input_item">
-                            <input class="input_text required" type="text">
-                            <span class="title_input">Company address</span>
+                        <div class="input_item required">
+                            <input class="input_text" type="text">
+                            <span class="title_input">Company address <span></span></span>
                         </div>
                         <div class="input_item">
                             <input class="input_text" type="text" placeholder="https://">
@@ -119,7 +120,7 @@
                         </div>
                         <div class="input_item required">
                             <input class="input_text" type="text">
-                            <span class="title_input">Product description</span>
+                            <span class="title_input">Product description <span></span></span>
                         </div>
                         <div class="input_item">
                             <div class="input_file btb_file-js" data-text="choose file to upload">choose file to upload
@@ -138,7 +139,7 @@
                                     <label for="no">No</label>
                                 </div>
                             </div>
-                            <span class="title_input">Does your company have an export registration?</span>
+                            <span class="title_input">Does your company have an export registration?<span></span></span>
                         </div>
                     </div>
                     <div class="row_select">
@@ -189,16 +190,16 @@
                         </div>
                         <div class="column select_out"></div>
                     </div>
+
                     <div class="button_row">
                         <button class="button_1 prev_js disable">Prev</button>
                         <button class="button_2 next_js">Next</button>
                     </div>
                 </div>
                 <div id="2" class="content_step content_step_2 ">
-                    <div class="title">Registration</div>
                     <div class="row">
                         <div class="column">
-                            <div class="subtitle">Please download the contract and fill in your information:</div>
+                            <div class="title">Registration</div>
                         </div>
                         <div class="column">
                             <div class="steps">
@@ -220,6 +221,7 @@
                             </div>
                         </div>
                     </div>
+                    <div class="subtitle"> Please download the contract and fill in your information:</div>
                     <div class="input_item">
                         <div class="input_file btb_file-js" data-text="download">download</div>
                         <input class="input file-js" type="file">
@@ -237,10 +239,9 @@
                     </div>
                 </div>
                 <div id="3" class="content_step content_step_3  ">
-                    <div class="title">Registration</div>
                     <div class="row">
                         <div class="column">
-                            <div class="subtitle">Please pick a niche rack first:</div>
+                            <div class="title">Registration</div>
                         </div>
                         <div class="column">
                             <div class="steps">
@@ -262,28 +263,31 @@
                             </div>
                         </div>
                     </div>
+                    <div class="subtitle">Please pick a niche rack first:</div>
                     <div class="title_text">Entrance - 1</div>
-                    <div class="tabel">
-                        <div class="column max-width">
-                            <input type="radio" id='rack_A' name="rack">
-                            <label for="rack_A">Rack <span>“A”</span></label>
-                        </div>
-                        <div class="column flex-start">
-                            <input type="radio" id='rack_B' name="rack">
-                            <label for="rack_B">Rack <span>“B”</span></label>
-                            <input type="radio" id='rack_D' name="rack">
-                            <label for="rack_D">Rack <span>“D”</span></label>
-                            <input type="radio" id='rack_F' name="rack">
-                            <label for="rack_F">Rack <span>“F”</span></label>
-                        </div>
+                    <div class="tabel_wrap">
+                        <div class="tabel">
+                            <div class="column max-width">
+                                <input type="radio" id='rack_A' name="rack">
+                                <label for="rack_A">Rack <span>“A”</span></label>
+                            </div>
+                            <div class="column flex-start">
+                                <input type="radio" id='rack_B' name="rack">
+                                <label for="rack_B">Rack <span>“B”</span></label>
+                                <input type="radio" id='rack_D' name="rack">
+                                <label for="rack_D">Rack <span>“D”</span></label>
+                                <input type="radio" id='rack_F' name="rack">
+                                <label for="rack_F">Rack <span>“F”</span></label>
+                            </div>
 
-                        <div class="column flex-end">
-                            <input type="radio" id='rack_C' name="rack">
-                            <label for="rack_C">Rack <span>“C”</span></label>
-                            <input type="radio" id='rack_E' name="rack">
-                            <label for="rack_E">Rack <span>“E”</span></label>
-                            <input type="radio" id='rack_G' name="rack">
-                            <label for="rack_G">Rack <span>“G”</span></label>
+                            <div class="column flex-end">
+                                <input type="radio" id='rack_C' name="rack">
+                                <label for="rack_C">Rack <span>“C”</span></label>
+                                <input type="radio" id='rack_E' name="rack">
+                                <label for="rack_E">Rack <span>“E”</span></label>
+                                <input type="radio" id='rack_G' name="rack">
+                                <label for="rack_G">Rack <span>“G”</span></label>
+                            </div>
                         </div>
                     </div>
                     <div class="button_row">
@@ -292,10 +296,9 @@
                     </div>
                 </div>
                 <div id="4" class="content_step content_step_4">
-                    <div class="title">Registration</div>
                     <div class="row">
                         <div class="column">
-                            <div class="subtitle">Please pick a niche in RACK !!F!!</div>
+                            <div class="title">Registration</div>
                         </div>
                         <div class="column">
                             <div class="steps">
@@ -317,85 +320,88 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tabel">
-                        <div class="row main">
-                            <div class="column main"><span class="opacity">0</span></div>
-                            <div class="column">A</div>
-                            <div class="column">B</div>
-                            <div class="column">C</div>
-                            <div class="column">D</div>
-                            <div class="column">E</div>
-                            <div class="column">F</div>
-                            <div class="column"></div>
-                        </div>
-                        <div class="row">
-                            <div class="column main">1</div>
-                            <input type="radio" name="price" id="1A">
-                            <label for="1A" class="column"><span class="number">3,000 $/yaer</span></label>
-                            <input type="radio" name="price" id="1B">
-                            <label for="1B" class="column reserved"><span class="number">3,000 $/yaer</span></label>
-                            <input type="radio" name="price" id="1C">
-                            <label for="1C" class="column"><span class="number">3,000 $/yaer</span></label>
-                            <input type="radio" name="price" id="1D">
-                            <label for="1D" class="column"><span class="number">3,000 $/yaer</span></label>
-                            <input type="radio" name="price" id="1E">
-                            <label for="1E" class="column"><span class="number">3,000 $/yaer</span></label>
-                            <input type="radio" name="price" id="1F">
-                            <label for="1F" class="column"><span class="number">3,000 $/yaer</span></label>
+                    <div class="subtitle"> Please pick a niche in </div>
+                    <div class="tabel_wrap">
+                        <div class="tabel">
+                            <div class="row main">
+                                <div class="column main"><span class="opacity">0</span></div>
+                                <div class="column">A</div>
+                                <div class="column">B</div>
+                                <div class="column">C</div>
+                                <div class="column">D</div>
+                                <div class="column">E</div>
+                                <div class="column">F</div>
+                                <div class="column"></div>
+                            </div>
+                            <div class="row">
+                                <div class="column main">1</div>
+                                <input type="radio" name="price" id="1A">
+                                <label for="1A" class="column"><span class="number">3,000 $/yaer</span></label>
+                                <input type="radio" name="price" id="1B">
+                                <label for="1B" class="column reserved"><span class="number">3,000 $/yaer</span></label>
+                                <input type="radio" name="price" id="1C">
+                                <label for="1C" class="column"><span class="number">3,000 $/yaer</span></label>
+                                <input type="radio" name="price" id="1D">
+                                <label for="1D" class="column"><span class="number">3,000 $/yaer</span></label>
+                                <input type="radio" name="price" id="1E">
+                                <label for="1E" class="column"><span class="number">3,000 $/yaer</span></label>
+                                <input type="radio" name="price" id="1F">
+                                <label for="1F" class="column"><span class="number">3,000 $/yaer</span></label>
 
-                            <label class="column"></label>
-                        </div>
-                        <div class="row">
-                            <div class="column main">2</div>
-                            <input type="radio" name="price" id="2A">
-                            <label for="2A" class="column"><span class="number">3,000 $/yaer</span></label>
-                            <input type="radio" name="price" id="2B">
-                            <label for="2B" class="column"><span class="number">3,000 $/yaer</span></label>
-                            <input type="radio" name="price" id="2C">
-                            <label for="2C" class="column"><span class="number">3,000 $/yaer</span></label>
-                            <input type="radio" name="price" id="2D">
-                            <label for="2D" class="column"><span class="number">3,000 $/yaer</span></label>
-                            <input type="radio" name="price" id="2E">
-                            <label for="2E" class="column reserved"><span class="number">3,000 $/yaer</span></label>
-                            <input type="radio" name="price" id="2F">
-                            <label for="2F" class="column reserved"><span class="number">3,000 $/yaer</span></label>
+                                <label class="column"></label>
+                            </div>
+                            <div class="row">
+                                <div class="column main">2</div>
+                                <input type="radio" name="price" id="2A">
+                                <label for="2A" class="column"><span class="number">3,000 $/yaer</span></label>
+                                <input type="radio" name="price" id="2B">
+                                <label for="2B" class="column"><span class="number">3,000 $/yaer</span></label>
+                                <input type="radio" name="price" id="2C">
+                                <label for="2C" class="column"><span class="number">3,000 $/yaer</span></label>
+                                <input type="radio" name="price" id="2D">
+                                <label for="2D" class="column"><span class="number">3,000 $/yaer</span></label>
+                                <input type="radio" name="price" id="2E">
+                                <label for="2E" class="column reserved"><span class="number">3,000 $/yaer</span></label>
+                                <input type="radio" name="price" id="2F">
+                                <label for="2F" class="column reserved"><span class="number">3,000 $/yaer</span></label>
 
-                            <label class="column"></label>
-                        </div>
-                        <div class="row">
-                            <div class="column main">3</div>
-                            <input type="radio" name="price" id="3A">
-                            <label for="3A" class="column reserved"><span class="number">3,000 $/yaer</span></label>
-                            <input type="radio" name="price" id="3B">
-                            <label for="3B" class="column reserved"><span class="number">3,000 $/yaer</span></label>
-                            <input type="radio" name="price" id="3C">
-                            <label for="3C" class="column"><span class="number">3,000 $/yaer</span></label>
-                            <input type="radio" name="price" id="3D">
-                            <label for="3D" class="column reserved"><span class="number">3,000 $/yaer</span></label>
-                            <input type="radio" name="price" id="3E">
-                            <label for="3E" class="column"><span class="number">3,000 $/yaer</span></label>
-                            <input type="radio" name="price" id="3F">
-                            <label for="3F" class="column"><span class="number">3,000 $/yaer</span></label>
+                                <label class="column"></label>
+                            </div>
+                            <div class="row">
+                                <div class="column main">3</div>
+                                <input type="radio" name="price" id="3A">
+                                <label for="3A" class="column reserved"><span class="number">3,000 $/yaer</span></label>
+                                <input type="radio" name="price" id="3B">
+                                <label for="3B" class="column reserved"><span class="number">3,000 $/yaer</span></label>
+                                <input type="radio" name="price" id="3C">
+                                <label for="3C" class="column"><span class="number">3,000 $/yaer</span></label>
+                                <input type="radio" name="price" id="3D">
+                                <label for="3D" class="column reserved"><span class="number">3,000 $/yaer</span></label>
+                                <input type="radio" name="price" id="3E">
+                                <label for="3E" class="column"><span class="number">3,000 $/yaer</span></label>
+                                <input type="radio" name="price" id="3F">
+                                <label for="3F" class="column"><span class="number">3,000 $/yaer</span></label>
 
-                            <label class="column"></label>
-                        </div>
-                        <div class="row">
-                            <div class="column main">4</div>
-                            <input type="radio" name="price" id="4A">
-                            <label for="4A" class="column"><span class="number">3,000 $/yaer</span></label>
-                            <input type="radio" name="price" id="4B">
-                            <label for="4B" class="column reserved"><span class="number">3,000 $/yaer</span></label>
-                            <input type="radio" name="price" id="4C">
-                            <label for="4C" class="column reserved"><span class="number">3,000 $/yaer</span></label>
-                            <input type="radio" name="price" id="4D">
-                            <label for="4D" class="column"><span class="number">3,000 $/yaer</span></label>
-                            <input type="radio" name="price" id="4E">
-                            <label for="4E" class="column reserved"><span class="number">3,000 $/yaer</span></label>
-                            <input type="radio" name="price" id="4F">
-                            <label for="4F" class="column reserved"><span class="number">3,000 $/yaer</span></label>
+                                <label class="column"></label>
+                            </div>
+                            <div class="row">
+                                <div class="column main">4</div>
+                                <input type="radio" name="price" id="4A">
+                                <label for="4A" class="column"><span class="number">3,000 $/yaer</span></label>
+                                <input type="radio" name="price" id="4B">
+                                <label for="4B" class="column reserved"><span class="number">3,000 $/yaer</span></label>
+                                <input type="radio" name="price" id="4C">
+                                <label for="4C" class="column reserved"><span class="number">3,000 $/yaer</span></label>
+                                <input type="radio" name="price" id="4D">
+                                <label for="4D" class="column"><span class="number">3,000 $/yaer</span></label>
+                                <input type="radio" name="price" id="4E">
+                                <label for="4E" class="column reserved"><span class="number">3,000 $/yaer</span></label>
+                                <input type="radio" name="price" id="4F">
+                                <label for="4F" class="column reserved"><span class="number">3,000 $/yaer</span></label>
 
-                            <label class="column"></label>
+                                <label class="column"></label>
 
+                            </div>
                         </div>
                     </div>
                     <div class="button_row">
@@ -404,12 +410,9 @@
                     </div>
                 </div>
                 <div id="5" class="content_step content_step_5 ">
-                    <div class="title">Registration</div>
                     <div class="row">
                         <div class="column">
-                            <div class="subtitle">Please pick a niche in RACK !!F!!</div>
-                            <div class="subtitle">After you fill in your information our manager will form an invoice
-                                for you.</div>
+                            <div class="title">Registration</div>
                         </div>
                         <div class="column">
                             <div class="steps">
@@ -431,6 +434,10 @@
                             </div>
                         </div>
                     </div>
+                    <div class="subtitle"> You have picked niche D2 in rack “F” for 4,500.00 $/year</div>
+                    <div class="subtitle"> After you fill in your information our manager will form an invoice for you.
+                    </div>
+                    <div class="subtitle"> You have picked niche D2 in rack “F” for 4,500.00 $/year</div>
                     <div class="input_block">
                         <div class="subtitle">Fill in the form about now you want to sell your product:</div>
                         <div class="input_item required">

@@ -128,7 +128,6 @@ a:hover {
 }
 
 .container {
-  margin: 0 15px 0 15px;
   padding: 0 15px;
 }
 
@@ -147,10 +146,10 @@ a:hover {
   align-items: flex-start;
   margin-bottom: 15px;
 }
-.input_item.required .title_input {
+.input_item.required .title_input span {
   position: relative;
 }
-.input_item.required .title_input::after {
+.input_item.required .title_input span::after {
   content: "*";
   color: #be1e28;
   position: absolute;
@@ -475,6 +474,10 @@ a:hover {
     z-index: 120;
   }
 }
+.nav_bar.active {
+  pointer-events: initial;
+  opacity: 1;
+}
 .nav_bar .df {
   display: flex;
   align-items: center;
@@ -663,6 +666,14 @@ a:hover {
   margin-right: 10px;
   object-fit: contain;
 }
+.main_block .logo {
+  display: none;
+}
+@media (hover: none) and (pointer: coarse), (max-width: 1024px) {
+  .main_block .logo {
+    display: block;
+  }
+}
 .main_block .log {
   color: #ffffff;
   transition: 0.4s;
@@ -693,12 +704,20 @@ a:hover {
 
 .button_1 {
   border: 2px solid #ffffff;
+  background: rgba(58, 63, 73, 0.2);
+}
+.button_1:hover {
+  background: rgba(58, 63, 73, 0.8);
 }
 
 .button_2 {
   border: 2px solid #be1e28;
+  background-color: rgba(190, 30, 40, 0.5);
+}
+.button_2:hover {
   background-color: #be1e28;
 }
+
 .row {
   display: flex;
 }
@@ -844,15 +863,54 @@ li.counter li:before {
   align-items: center;
   justify-content: space-between;
   padding: 20px 30px;
+  position: relative;
 }
-@media (max-width: 767px) {
+@media (hover: none) and (pointer: coarse), (max-width: 1024px) {
   .top_wrap .top_inner {
-    padding: 20px 10px;
+    padding: 20px 60px 20px 15px;
+  }
+}
+.top_wrap .button_burger {
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: calc(50% - 10px);
+  width: 30px;
+  height: 20px;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  -webkit-user-select: none;
+          user-select: none;
+}
+.top_wrap .button_burger::after, .top_wrap .button_burger::before,
+.top_wrap .button_burger span {
+  content: "";
+  position: absolute;
+  height: 1px;
+  background-color: #ffffff;
+  right: 0;
+  pointer-events: none;
+}
+.top_wrap .button_burger::after {
+  width: 50%;
+  top: 0;
+}
+.top_wrap .button_burger span {
+  width: 75%;
+  top: calc(50% - 0.5px);
+}
+.top_wrap .button_burger::before {
+  width: 100%;
+  bottom: 0;
+}
+@media (hover: none) and (pointer: coarse), (max-width: 1024px) {
+  .top_wrap .button_burger {
+    display: block;
   }
 }
 .top_wrap .left {
   display: flex;
-  align-items: center;
   flex-direction: column;
 }
 .top_wrap .left .text {
@@ -866,9 +924,14 @@ li.counter li:before {
     font-size: 14px;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 767px) {
   .top_wrap .left .text {
     font-size: 12px;
+  }
+}
+@media (max-width: 450px) {
+  .top_wrap .left .text {
+    font-size: 9px;
   }
 }
 .top_wrap .logo {
@@ -906,6 +969,12 @@ li.counter li:before {
     height: 27px;
   }
 }
+@media (max-width: 450px) {
+  .logo {
+    width: 120px;
+    height: 22px;
+  }
+}
 
 .main.wrapper {
   padding: 0;
@@ -934,18 +1003,26 @@ li.counter li:before {
   border-radius: 4px;
 }
 
-.registration .row {
-  align-items: center;
+.tabel_wrap {
+  width: 100%;
+  overflow-x: auto;
+  padding-bottom: 30px;
 }
-@media (hover: none) and (pointer: coarse), (max-width: 1024px) {
-  .registration .row {
-    flex-direction: column-reverse;
-  }
+.tabel_wrap::-webkit-scrollbar {
+  height: 4px;
+  width: 3px;
 }
+.tabel_wrap::-webkit-scrollbar-track {
+  background-color: #3a3f49;
+}
+.tabel_wrap::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+}
+
 .registration .column {
   width: 50%;
 }
-@media (hover: none) and (pointer: coarse), (max-width: 1024px) {
+@media (max-width: 1370px) {
   .registration .column {
     width: 100%;
   }
@@ -954,7 +1031,7 @@ li.counter li:before {
   display: flex;
   align-items: flex-start;
 }
-@media (max-width: 767px) {
+@media (max-width: 1370px) {
   .registration .row_select {
     flex-direction: column;
   }
@@ -964,7 +1041,7 @@ li.counter li:before {
   display: flex;
   flex-wrap: wrap;
 }
-@media (max-width: 767px) {
+@media (max-width: 1370px) {
   .registration .select_out {
     padding-left: 0;
     margin-left: -5px;
@@ -1011,9 +1088,9 @@ li.counter li:before {
   width: max-content;
   display: flex;
 }
-@media (hover: none) and (pointer: coarse), (max-width: 1024px) {
+@media (max-width: 1370px) {
   .steps {
-    margin-left: -20px;
+    margin-left: -10px;
   }
 }
 .steps .step {
@@ -1022,11 +1099,21 @@ li.counter li:before {
   flex-direction: column;
   align-items: center;
 }
+@media (max-width: 450px) {
+  .steps .step {
+    padding: 10px;
+  }
+}
 .steps .step .text {
   color: #ffffff;
   margin-bottom: 10px;
   opacity: 0;
   pointer-events: none;
+}
+@media (max-width: 450px) {
+  .steps .step .text {
+    font-size: 12px;
+  }
 }
 .steps .step .dote {
   height: 5px;
@@ -1043,6 +1130,11 @@ li.counter li:before {
   height: 1px;
   background-color: #3a3f49;
   top: calc(50% - 0.5px);
+}
+@media (max-width: 450px) {
+  .steps .step .dote::after, .steps .step .dote::before {
+    width: 23px;
+  }
 }
 .steps .step .dote::after {
   left: 100%;
@@ -1086,7 +1178,15 @@ li.counter li:before {
   padding: 0 30px;
   display: none;
 }
-@media (hover: none) and (pointer: coarse), (max-width: 1024px) {
+.content_step .row {
+  align-items: center;
+}
+@media (max-width: 1370px) {
+  .content_step .row {
+    flex-direction: column;
+  }
+}
+@media (max-width: 1370px) {
   .content_step {
     padding: 0;
   }
@@ -1097,7 +1197,7 @@ li.counter li:before {
 .content_step .input_block {
   width: 50%;
 }
-@media (max-width: 767px) {
+@media (max-width: 1370px) {
   .content_step .input_block {
     width: 100%;
   }
@@ -1112,7 +1212,14 @@ li.counter li:before {
   transform: translate(50%, 50%);
   background-color: #1b202a;
 }
+@media (max-width: 1400px) {
+  .content_step_3 .title_text {
+    transform: translate(0, 0);
+    margin-bottom: 10px;
+  }
+}
 .content_step_3 .tabel {
+  min-width: 800px;
   border: 1px solid #3a3f49;
   border-radius: 4px;
   padding: 20px;
@@ -1166,9 +1273,14 @@ li.counter li:before {
 }
 
 .content_step_4 .tabel {
+  min-width: 1100px;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
+}
+.content_step_4 .tabel .row {
+  display: flex;
+  flex-direction: row;
 }
 .content_step_4 .tabel .opacity {
   opacity: 0;

@@ -72,7 +72,6 @@ a {
 
 // <КОНТЕЙНЕР>---------------------------------------------------------------
 .container {
-    margin: 0 15px 0 15px;
     padding: 0 $padd-container + px;
 }
 .page {
@@ -116,6 +115,11 @@ a {
         width: 150px;
         height: 27px;
     }
+
+    @media (max-width: 450px) {
+        width: 120px;
+        height: 22px;
+    }
 }
 .main.wrapper {
     padding: 0;
@@ -140,24 +144,34 @@ a {
     border: 1px solid #3a3f49;
     border-radius: 4px;
 }
-
-.registration {
-    .row {
-        align-items: center;
-        @media (hover: none) and (pointer: coarse), (max-width: 1024px) {
-            flex-direction: column-reverse;
-        }
+.tabel_wrap {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 30px;
+    &::-webkit-scrollbar {
+        height: 4px;
+        width: 3px;
     }
+
+    &::-webkit-scrollbar-track {
+        background-color: #3a3f49;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #ffffff;
+    }
+}
+.registration {
     .column {
         width: 50%;
-        @media (hover: none) and (pointer: coarse), (max-width: 1024px) {
+        @media (max-width: 1370px) {
             width: 100%;
         }
     }
     .row_select {
         display: flex;
         align-items: flex-start;
-        @media (max-width: 767px) {
+        @media (max-width: 1370px) {
             flex-direction: column;
         }
     }
@@ -165,7 +179,7 @@ a {
         padding-left: 35px;
         display: flex;
         flex-wrap: wrap;
-        @media (max-width: 767px) {
+        @media (max-width: 1370px) {
             padding-left: 0;
             margin-left: -5px;
         }
@@ -211,19 +225,25 @@ a {
     margin-right: 30px;
     width: max-content;
     display: flex;
-    @media (hover: none) and (pointer: coarse), (max-width: 1024px) {
-        margin-left: -20px;
+    @media (max-width: 1370px) {
+        margin-left: -10px;
     }
     .step {
         padding: 0 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
+        @media (max-width: 450px) {
+            padding: 10px;
+        }
         .text {
             color: #ffffff;
             margin-bottom: 10px;
             opacity: 0;
             pointer-events: none;
+            @media (max-width: 450px) {
+                font-size: 12px;
+            }
         }
         .dote {
             height: 5px;
@@ -240,6 +260,9 @@ a {
                 height: 1px;
                 background-color: #3a3f49;
                 top: calc(50% - 0.5px);
+                @media (max-width: 450px) {
+                    width: 23px;
+                }
             }
             &::after {
                 left: 100%;
@@ -299,9 +322,15 @@ a {
 }
 
 .content_step {
+    .row {
+        align-items: center;
+        @media (max-width: 1370px) {
+            flex-direction: column;
+        }
+    }
     padding: 0 30px;
     display: none;
-    @media (hover: none) and (pointer: coarse), (max-width: 1024px) {
+    @media (max-width: 1370px) {
         padding: 0;
     }
 
@@ -310,7 +339,7 @@ a {
     }
     .input_block {
         width: 50%;
-        @media (max-width: 767px) {
+        @media (max-width: 1370px) {
             width: 100%;
         }
     }
@@ -322,12 +351,20 @@ a {
     }
 }
 
+.content_step_1 {
+}
+
 .content_step_3 {
     .title_text {
         transform: translate(50%, 50%);
         background-color: #1b202a;
+        @media (max-width: 1400px) {
+            transform: translate(0, 0);
+            margin-bottom: 10px;
+        }
     }
     .tabel {
+        min-width: 800px;
         border: 1px solid #3a3f49;
         border-radius: 4px;
         padding: 20px;
@@ -391,6 +428,11 @@ a {
 
 .content_step_4 {
     .tabel {
+        .row {
+            display: flex;
+            flex-direction: row;
+        }
+        min-width: 1100px;
         border-radius: 4px;
         .opacity {
             opacity: 0;

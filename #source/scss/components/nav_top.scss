@@ -14,6 +14,11 @@
     opacity: 0;
     z-index: 120;
   }
+
+  &.active {
+    pointer-events: initial;
+    opacity: 1;
+  }
   .df {
     display: flex;
     align-items: center;
@@ -203,6 +208,14 @@
       background-color: #ffffff;
       margin-right: 10px;
       object-fit: contain;
+    }
+  }
+  .logo {
+    display: none {
+
+    }
+    @media (hover: none) and (pointer: coarse), (max-width: 1024px) {
+      display: block;
     }
   }
   .log {

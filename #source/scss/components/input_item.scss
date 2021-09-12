@@ -5,13 +5,15 @@
   margin-bottom: 15px;
   &.required {
     .title_input {
-      position: relative;
-      &::after {
-        content: "*";
-        color: $color_1;
-        position: absolute;
-        right: -10px;
-        top: 0;
+      span {
+        position: relative;
+        &::after {
+          content: "*";
+          color: $color_1;
+          position: absolute;
+          right: -10px;
+          top: 0;
+        }
       }
     }
   }

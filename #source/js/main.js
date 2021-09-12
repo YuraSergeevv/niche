@@ -18,7 +18,21 @@ window.onload = function () {
 
     }
 
-    let steps = document.querySelectorAll('.step');
+    document.addEventListener('click', function (e) {
+        if (e.target.classList.contains("button_burger")) {
+            document.querySelector('.nav_bar').classList.add('active');
+        }
+        if (e.target.classList.contains("close_menu")) {
+            document.querySelector('.nav_bar').classList.remove('active');
+        }
+        if (!e.target.closest('.select')) {
+            for (const item of document.querySelectorAll('.select')) {
+                item.classList.remove('is-active');
+            }
+        }
+    })
+
+    let steps = document.querySelectorAll('.step.last');
     for (const step of steps) {
         step.addEventListener('click', function (e) {
             let stepNum = step.classList[0].split('_')[1];
