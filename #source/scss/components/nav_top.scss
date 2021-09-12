@@ -190,6 +190,11 @@
     @media (max-width: 767px) {
       font-size: 14px;
     }
+    .top_inner {
+      @media (hover: none) and (pointer: coarse), (max-width: 1024px) {
+        padding: 20px 60px 20px 15px;
+      }
+    }
   }
   .user {
     margin-left: 50px;
