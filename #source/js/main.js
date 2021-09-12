@@ -2,21 +2,29 @@ window.onload = function () {
 
     let buttonsFile = document.querySelectorAll('.btb_file-js');
     for (const buttonFile of buttonsFile) {
+        let file = buttonFile.closest('.input_item').querySelector('.file-js');
         buttonFile.addEventListener('click', function () {
-            let file = this.closest('.input_item').querySelector('.file-js');
             file.click();
-            file.addEventListener('change', function () {
-                let name = (file.value.split('\\'));
-                if (name[name.length - 1]) {
-                    buttonFile.innerText = name[name.length - 1];
+        });
+        file.addEventListener('change', function () {
+            let name = (file.value.split('\\'));
+            if (!name[name.length - 1] == '') {
+                buttonFile.innerText = name[name.length - 1];
+                if (buttonFile.closest('.input_item').querySelector('.file_name')) {
+                    buttonFile.closest('.input_item').querySelector('.file_name').remove();
                 }
-                else {
-                    buttonFile.innerText = buttonFile.getAttribute('data-text');;
-                }
-            })
+                buttonFile.insertAdjacentHTML('afterend', `<div  class='item_current file_name'>${buttonFile.innerText}<label class='delete_file'></label></div>`);
+            }
+            else {
+                buttonFile.innerText = buttonFile.getAttribute('data-text');
+                buttonFile.closest('.input_item').querySelector('.file_name').remove();
+            }
         });
 
+
     }
+
+
 
     document.addEventListener('click', function (e) {
         if (e.target.classList.contains("button_burger")) {
@@ -29,6 +37,26 @@ window.onload = function () {
             for (const item of document.querySelectorAll('.select')) {
                 item.classList.remove('is-active');
             }
+        }
+        if (e.target.classList.contains('delete_file')) {
+            e.target.closest('.input_item').querySelector('.file-js').value = '';
+            e.target.closest('.input_item').querySelector('.btb_file-js').innerText = e.target.closest('.input_item').querySelector('.btb_file-js').getAttribute('data-text');
+            e.target.closest('.input_item').querySelector('.file_name').remove();
+
+        }
+
+        if (e.target.classList.contains('add_product')) {
+            e.target.before(e.target.previousElementSibling.cloneNode(true));
+            e.target.previousElementSibling.querySelectorAll('input')
+            for (const input of e.target.previousElementSibling.querySelectorAll('input')) {
+                input.value = '';
+            }
+        }
+
+        if (e.target.classList.contains('delete_product')) {
+            e.target.closest('.input_block').remove();
+            console.log(e.target);
+
         }
     })
 
@@ -85,11 +113,27 @@ window.onload = function () {
         }
 
         function selectCheck() {
+            let selectCurrent = this.closest('.select').querySelector('.select__current');
             if (this.checked) {
-                selectOut.insertAdjacentHTML('beforeend', `<div  class='city_current'>${this.id}<label for='${this.id}'></label></div>`)
+                selectOut.insertAdjacentHTML('beforeend', `<div  class='item_current'>${this.id}<label for='${this.id}'></label></div>`);
+
+                if (selectCurrent.getAttribute('data-text')) {
+                    selectCurrent.insertAdjacentHTML('beforeend', `<label for='${this.id}'>${this.id}</label>`);
+                }
+                else {
+                    selectCurrent.setAttribute('data-text', selectCurrent.innerText);
+                    selectCurrent.innerText = '';
+                    selectCurrent.insertAdjacentHTML('beforeend', `<label for='${this.id}'>${this.id}</label>`);
+                }
             }
             else {
-                selectOut.querySelector(`label[for=${this.id}]`).closest('.city_current').remove();
+                selectOut.querySelector(`label[for=${this.id}]`).closest('.item_current').remove();
+                selectCurrent.querySelector(`label[for=${this.id}]`).remove();
+
+                if (!selectCurrent.innerText) {
+                    selectCurrent.innerText = selectCurrent.getAttribute('data-text');
+                    selectCurrent.removeAttribute('data-text');
+                }
             }
         }
 

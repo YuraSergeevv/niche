@@ -146,16 +146,6 @@ a:hover {
   align-items: flex-start;
   margin-bottom: 15px;
 }
-.input_item.required .title_input span {
-  position: relative;
-}
-.input_item.required .title_input span::after {
-  content: "*";
-  color: #be1e28;
-  position: absolute;
-  right: -10px;
-  top: 0;
-}
 .input_item .title_input {
   display: inline-block;
   margin-bottom: 10px;
@@ -175,9 +165,6 @@ a:hover {
   transition: 0.3s;
   font-size: inherit;
   color: #5a5e66;
-}
-.input_item .input_text.error {
-  border: 1px solid #be1e28;
 }
 .input_item .input_text:active, .input_item .input_text:focus {
   color: #ffffff;
@@ -274,9 +261,25 @@ a:hover {
   left: 50%;
   transform: translateX(-50%);
   background-color: #3a3f49;
+  opacity: 0;
 }
 .input_item .select__current {
   color: #5a5e66;
+}
+.input_item .select__current label {
+  position: relative;
+}
+.input_item .select__current label::after {
+  content: ",";
+  position: absolute;
+  bottom: -1px;
+  right: -4px;
+}
+.input_item .select__current label:last-of-type::after {
+  content: none;
+}
+.input_item .select__current label + label {
+  margin-left: 8px;
 }
 .input_item .select__icon {
   align-items: center;
@@ -288,10 +291,6 @@ a:hover {
   margin-right: 15px;
   text-align: center;
   width: 12px;
-  background-image: url(../images/down-arrow.svg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
 }
 .input_item .select__body {
   max-height: 140px;
@@ -382,8 +381,20 @@ a:hover {
 .input_item .is-active .select__body {
   display: block;
 }
-.input_item .is-active .select__icon {
-  background-image: url(../images/up-arrow.svg);
+.input_item.required .title_input span {
+  position: relative;
+}
+.input_item.required .title_input span::after {
+  content: "*";
+  color: #be1e28;
+  position: absolute;
+  right: -10px;
+  top: 0;
+}
+.input_item.error .input_text,
+.input_item.error .select__header,
+.input_item.error .select__body {
+  border-color: #be1e28;
 }
 
 .langs {
@@ -828,10 +839,10 @@ li.counter li:before {
   height: auto;
 }
 
-.main {
+.wrapper.main {
   min-height: 600px;
 }
-.main .form_wrap {
+.wrapper.main .form_wrap {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -839,27 +850,27 @@ li.counter li:before {
   padding-right: 15px;
   padding-left: 15px;
 }
-.main .form_inner {
+.wrapper.main .form_inner {
   padding: 20px 50px;
   max-width: 500px;
   width: 100%;
   border-radius: 4px;
   border: 1px solid #3a3f49;
 }
-.main .form_inner .title {
+.wrapper.main .form_inner .title {
   text-align: center;
   margin-bottom: 20px;
 }
-.main .form_inner input[type=submit] {
+.wrapper.main .form_inner input[type=submit] {
   margin: 0 auto;
 }
-.main .form_inner .link_row {
+.wrapper.main .form_inner .link_row {
   display: flex;
   justify-content: space-between;
   margin: 30px 0;
 }
 @media (max-width: 767px) {
-  .main .form_inner {
+  .wrapper.main .form_inner {
     padding: 20px 30px;
   }
 }
@@ -1058,7 +1069,7 @@ li.counter li:before {
     margin-left: -5px;
   }
 }
-.registration .select_out .city_current {
+.registration .item_current {
   padding: 10px 15px;
   border-radius: 30px;
   display: flex;
@@ -1066,7 +1077,7 @@ li.counter li:before {
   border: 1px solid #3a3f49;
   margin: 5px 10px 5px;
 }
-.registration .select_out .city_current label {
+.registration .item_current label {
   cursor: pointer;
   margin-left: 10px;
   display: block;
@@ -1075,7 +1086,7 @@ li.counter li:before {
   position: relative;
   transform: rotate(45deg);
 }
-.registration .select_out .city_current label::after, .registration .select_out .city_current label::before {
+.registration .item_current label::after, .registration .item_current label::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -1083,11 +1094,11 @@ li.counter li:before {
   transform: translate(-50%, -50%);
   background-color: #ffffff;
 }
-.registration .select_out .city_current label::after {
+.registration .item_current label::after {
   width: 100%;
   height: 1px;
 }
-.registration .select_out .city_current label::before {
+.registration .item_current label::before {
   height: 100%;
   width: 1px;
 }
@@ -1144,7 +1155,7 @@ li.counter li:before {
 }
 @media (max-width: 450px) {
   .steps .step .dote::after, .steps .step .dote::before {
-    width: 23px;
+    width: 24px;
   }
 }
 .steps .step .dote::after {
@@ -1346,7 +1357,7 @@ li.counter li:before {
   display: none;
 }
 .content_step_4 .tabel .column.reserved::after {
-  content: "reserved";
+  content: attr(data-reserved);
 }
 .content_step_4 .tabel input[type=radio] {
   display: none;
@@ -1354,4 +1365,45 @@ li.counter li:before {
 .content_step_4 .tabel input[type=radio]:checked + .column {
   font-weight: 500;
   color: #be1e28;
+}
+
+.content_step_5 .add_product {
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 18px;
+  cursor: pointer;
+}
+.content_step_5 .input_block {
+  margin-bottom: 50px;
+  position: relative;
+}
+.content_step_5 .input_block + .input_block .delete_product {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  transform: rotate(45deg);
+  right: 0;
+  top: 2px;
+}
+.content_step_5 .input_block + .input_block .delete_product:hover::after, .content_step_5 .input_block + .input_block .delete_product:hover::before {
+  background-color: #be1e28;
+}
+.content_step_5 .input_block + .input_block .delete_product::after, .content_step_5 .input_block + .input_block .delete_product::before {
+  content: "";
+  transition: 0.4s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  border: 2px;
+  cursor: pointer;
+}
+.content_step_5 .input_block + .input_block .delete_product::after {
+  width: 100%;
+  height: 2px;
+}
+.content_step_5 .input_block + .input_block .delete_product::before {
+  height: 100%;
+  width: 2px;
 }
