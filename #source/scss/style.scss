@@ -102,6 +102,10 @@ a {
     opacity: 0;
 }
 
+.off {
+    pointer-events: none;
+    color: rgba(255, 255, 255, 0.5);
+}
 .logo {
     display: block;
     width: 180px;
@@ -351,6 +355,13 @@ a {
     }
 }
 
+.input_item {
+    .item_current {
+        margin: 0;
+        margin-top: 10px;
+    }
+}
+
 .content_step_1 {
 }
 
@@ -517,6 +528,9 @@ a {
     .input_block {
         margin-bottom: 50px;
         position: relative;
+        .subtitle {
+            margin-right: 30px;
+        }
         & + .input_block {
             .delete_product {
                 position: absolute;

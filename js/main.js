@@ -24,8 +24,6 @@ window.onload = function () {
 
     }
 
-
-
     document.addEventListener('click', function (e) {
         if (e.target.classList.contains("button_burger")) {
             document.querySelector('.nav_bar').classList.add('active');
@@ -78,6 +76,7 @@ window.onload = function () {
             let stepContent = Button.closest('.content_step');
             stepContent.classList.remove('active');
             stepContent.nextElementSibling.classList.add('active');
+            validation();
         })
     }
 
@@ -140,5 +139,65 @@ window.onload = function () {
     };
 
 
+    for (const item of document.querySelectorAll('.required input')) {
+        item.addEventListener('change', function () {
+            validation();
+        })
+    }
+
+    function validation() {
+        let inputsValidation = document.querySelectorAll('.active .required');
+        let check = false;
+        for (const input of inputsValidation) {
+            check = false;
+            for (const item of input.querySelectorAll('input[type="text"]')) {
+                if (item.value) {
+                    check = true;
+                    break;
+                }
+                else {
+                    check = false;
+                }
+            }
+            if (check) {
+                input.setAttribute('data-required', true);
+            }
+            else {
+                input.setAttribute('data-required', '');
+            }
+
+
+
+            for (const item of input.querySelectorAll('input[type="radio"], input[type="checkbox"]')) {
+                if (item.checked) {
+                    check = true;
+                    break;
+                }
+                else {
+                    check = false;
+                }
+            }
+            if (check) {
+                input.setAttribute('data-required', true);
+            }
+            else {
+                input.setAttribute('data-required', '');
+            }
+        }
+        check = true;
+        for (const input of inputsValidation) {
+            if (!input.getAttribute('data-required')) {
+                check = false
+            }
+        }
+        if (check) {
+            document.querySelector('.active .next_js').classList.remove('off');
+        }
+        else {
+            document.querySelector('.active .next_js').classList.add('off');
+        }
+    }
+
+    validation();
     select();
 };
