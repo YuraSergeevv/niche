@@ -1,4 +1,5 @@
 .wrapper.main {
+    padding: 0;
     min-height: 600px;
     .form_wrap {
         min-height: 100vh;
@@ -28,97 +29,6 @@
         }
         @media (max-width: 767px) {
             padding: 20px 30px;
-        }
-    }
-}
-
-.top_wrap {
-    background-color: #1b202a;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-
-    .top_inner {
-        right: 0;
-        left: 0;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 20px 30px;
-        position: relative;
-    }
-
-    .button_burger {
-        display: none;
-        position: absolute;
-        right: 10px;
-        top: calc(50% - 10px);
-        width: 30px;
-        height: 20px;
-        width: 30px;
-        height: 20px;
-        cursor: pointer;
-        user-select: none;
-        &::after,
-        &::before,
-        span {
-            content: "";
-            position: absolute;
-            height: 1px;
-            background-color: #ffffff;
-            right: 0;
-            pointer-events: none;
-        }
-        &::after {
-            width: 50%;
-            top: 0;
-        }
-        span {
-            width: 75%;
-            top: calc(50% - 0.5px);
-        }
-        &::before {
-            width: 100%;
-            bottom: 0;
-        }
-
-        @media (hover: none) and (pointer: coarse), (max-width: 1024px) {
-            display: block;
-        }
-    }
-    .left {
-        display: flex;
-        flex-direction: column;
-
-        .text {
-            font-weight: 300;
-            font-size: 24px;
-            line-height: 1.2;
-            letter-spacing: 0.02em;
-            @media (hover: none) and (pointer: coarse), (max-width: 1024px) {
-                font-size: 14px;
-            }
-            @media (max-width: 767px) {
-                font-size: 12px;
-            }
-            @media (max-width: 450px) {
-                font-size: 9px;
-            }
-        }
-    }
-
-    .logo {
-        margin-bottom: 10px;
-    }
-
-    .right {
-        display: flex;
-        align-items: center;
-        @media (hover: none) and (pointer: coarse), (max-width: 1024px) {
-            flex-direction: column;
-            align-items: flex-end;
         }
     }
 }

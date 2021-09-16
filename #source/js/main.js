@@ -198,6 +198,6 @@ window.onload = function () {
         }
     }
 
-    validation();
+    // validation();
     select();
 };
