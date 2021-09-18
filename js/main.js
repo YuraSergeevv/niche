@@ -1,6 +1,6 @@
 window.onload = function () {
 
-    let buttonsFile = document.querySelectorAll('.btb_file-js');
+    let buttonsFile = document.querySelectorAll('.btb_file-js , .clip-js');
     for (const buttonFile of buttonsFile) {
         let file = buttonFile.closest('.input_item').querySelector('.file-js');
         buttonFile.addEventListener('click', function () {
@@ -20,8 +20,6 @@ window.onload = function () {
                 buttonFile.closest('.input_item').querySelector('.file_name').remove();
             }
         });
-
-
     }
 
     document.addEventListener('click', function (e) {
@@ -38,7 +36,7 @@ window.onload = function () {
         }
         if (e.target.classList.contains('delete_file')) {
             e.target.closest('.input_item').querySelector('.file-js').value = '';
-            e.target.closest('.input_item').querySelector('.btb_file-js').innerText = e.target.closest('.input_item').querySelector('.btb_file-js').getAttribute('data-text');
+            e.target.closest('.input_item').querySelector('.btb_file-js, .clip-js').innerText = e.target.closest('.input_item').querySelector('.btb_file-js, .clip-js').getAttribute('data-text');
             e.target.closest('.input_item').querySelector('.file_name').remove();
 
         }

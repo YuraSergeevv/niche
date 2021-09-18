@@ -3,7 +3,7 @@
     box-sizing: border-box;
     border-radius: 4px;
     padding: 15px 25px;
-    font-size: 20px;
+    font-size: 16px;
     color: #ffffff;
     overflow-x: auto;
     margin-bottom: 30px;
@@ -22,6 +22,11 @@
 
     .table_title {
         margin-bottom: 20px;
+    }
+    .table_title_big {
+        font-style: italic;
+        font-size: 20px;
+        color: #929aac;
     }
     .table {
         min-width: 800px;
@@ -44,8 +49,14 @@
             color: #929aac;
         }
         .title_column {
+            a {
+                @extend .title_column;
+                transition: 0.4s;
+                &:hover {
+                    color: $color_1;
+                }
+            }
             color: #10bba6;
-            font-weight: 700;
             font-style: italic;
             align-items: flex-start;
         }
