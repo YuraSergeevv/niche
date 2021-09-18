@@ -1506,13 +1506,30 @@ li.counter li:before {
 .account .tabels_wrap {
   display: flex;
 }
+@media (max-width: 1024px) {
+  .account .tabels_wrap {
+    flex-direction: column;
+  }
+}
 .account .left_tabels {
   width: 35%;
   margin-right: 15px;
 }
+@media (max-width: 1024px) {
+  .account .left_tabels {
+    width: 100%;
+    margin: 0;
+  }
+}
 .account .right_tabels {
   width: 65%;
   margin-left: 15px;
+}
+@media (max-width: 1024px) {
+  .account .right_tabels {
+    width: 100%;
+    margin: 0;
+  }
 }
 .account .column {
   width: 50%;
@@ -1523,6 +1540,12 @@ li.counter li:before {
 }
 .account .column:last-of-type {
   margin-right: 0;
+}
+@media (max-width: 1024px) {
+  .account .column {
+    width: 100%;
+    margin: 0;
+  }
 }
 
 .table_a-info .table {

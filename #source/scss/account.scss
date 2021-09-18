@@ -10,14 +10,25 @@
     }
     .tabels_wrap {
         display: flex;
+        @media (max-width: 1024px) {
+            flex-direction: column;
+        }
     }
     .left_tabels {
         width: 35%;
         margin-right: 15px;
+        @media (max-width: 1024px) {
+            width: 100%;
+            margin: 0;
+        }
     }
     .right_tabels {
         width: 65%;
         margin-left: 15px;
+        @media (max-width: 1024px) {
+            width: 100%;
+            margin: 0;
+        }
     }
     .column {
         width: 50%;
@@ -27,6 +38,10 @@
         }
         &:last-of-type {
             margin-right: 0;
+        }
+        @media (max-width: 1024px) {
+            width: 100%;
+            margin: 0;
         }
     }
 }
