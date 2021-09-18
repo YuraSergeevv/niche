@@ -137,6 +137,7 @@ a:hover {
 @media (hover: none) and (pointer: coarse), (max-width: 1024px) {
   .page {
     padding-top: 95px;
+    padding-bottom: 50px;
   }
 }
 
@@ -850,13 +851,24 @@ a:hover {
   font-size: 20px;
   color: #ffffff;
   overflow-x: auto;
+  margin-bottom: 30px;
+}
+.table_wrapper::-webkit-scrollbar {
+  height: 4px;
+  width: 3px;
+}
+.table_wrapper::-webkit-scrollbar-track {
+  background-color: #3a3f49;
+}
+.table_wrapper::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
 }
 .table_wrapper .table_title {
   margin-bottom: 20px;
 }
 .table_wrapper .table {
-  min-width: 600px;
-  margin-bottom: 25 px;
+  min-width: 800px;
+  margin-bottom: 25px;
   border-radius: 4px 4px 0 0;
   overflow: hidden;
 }
@@ -868,27 +880,44 @@ a:hover {
 }
 .table_wrapper .table .t_column {
   width: 100%;
-  padding: 7px 15px;
+  max-width: 100%;
+  padding: 7px 10px;
   border: 0.5px solid #3a3f49;
   display: flex;
   align-items: center;
+  color: #929aac;
 }
 .table_wrapper .table .title_column {
   color: #10bba6;
   font-weight: 700;
   font-style: italic;
+  align-items: flex-start;
 }
 .table_wrapper .table .title_row .t_column {
+  font-style: normal;
+  text-align: center;
   justify-content: center;
 }
 .table_wrapper .table .title_row,
 .table_wrapper .table .total_row {
   background: rgba(58, 63, 73, 0.4);
 }
+.table_wrapper .table .title_row .t_column,
+.table_wrapper .table .total_row .t_column {
+  background: rgba(58, 63, 73, 0.4);
+  font-weight: 400;
+  color: #ffffff;
+  font-style: normal;
+}
+.table_wrapper .table .attention {
+  color: #be1e28;
+}
 .table_wrapper .block_pagination {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 15px;
+  min-width: 800px;
 }
 .table_wrapper .block_pagination .info_block {
   color: #929aac;
@@ -1468,6 +1497,228 @@ li.counter li:before {
 }
 .account .content {
   padding: 0 30px;
+}
+@media (max-width: 767px) {
+  .account .content {
+    padding: 0;
+  }
+}
+.account .tabels_wrap {
+  display: flex;
+}
+.account .left_tabels {
+  width: 35%;
+  margin-right: 15px;
+}
+.account .right_tabels {
+  width: 65%;
+  margin-left: 15px;
+}
+.account .column {
+  width: 50%;
+  margin: 0 15px;
+}
+.account .column:first-of-type {
+  margin-left: 0;
+}
+.account .column:last-of-type {
+  margin-right: 0;
+}
+
+.table_a-info .table {
+  min-width: 380px;
+}
+.table_a-info .t_column:nth-child(1) {
+  width: 38%;
+}
+.table_a-info .t_column:nth-child(2) {
+  width: 62%;
+}
+.table_a-info .block_pagination {
+  min-width: 380px;
+}
+
+.table_a-document .table {
+  min-width: 380px;
+}
+.table_a-document .t_column:nth-child(1) {
+  width: 100%;
+}
+.table_a-document .block_pagination {
+  min-width: 380px;
+}
+
+.table_a-niche .table {
+  min-width: 680px;
+}
+.table_a-niche .t_column:nth-child(1) {
+  width: 13.2%;
+}
+.table_a-niche .t_column:nth-child(2) {
+  width: 20.6%;
+}
+.table_a-niche .t_column:nth-child(3) {
+  width: 23.5%;
+}
+.table_a-niche .t_column:nth-child(4) {
+  width: 25%;
+}
+.table_a-niche .t_column:nth-child(5) {
+  width: 17.6%;
+}
+.table_a-niche .block_pagination {
+  min-width: 680px;
+}
+
+.table_a-products .table {
+  min-width: 680px;
+}
+.table_a-products .t_column:nth-child(1) {
+  width: 29.2%;
+}
+.table_a-products .t_column:nth-child(2) {
+  width: 17.7%;
+}
+.table_a-products .t_column:nth-child(3) {
+  width: 11.5%;
+}
+.table_a-products .t_column:nth-child(4) {
+  width: 41.5%;
+}
+.table_a-products .block_pagination {
+  min-width: 680px;
+}
+
+.table_a-orders .table {
+  min-width: 680px;
+}
+.table_a-orders .t_column:nth-child(1) {
+  width: 25, 4%;
+}
+.table_a-orders .t_column:nth-child(2) {
+  width: 23, 9%;
+}
+.table_a-orders .t_column:nth-child(3) {
+  width: 20, 4%;
+}
+.table_a-orders .t_column:nth-child(4) {
+  width: 14, 8%;
+}
+.table_a-orders .t_column:nth-child(5) {
+  width: 15, 5%;
+}
+.table_a-orders .block_pagination {
+  min-width: 680px;
+}
+
+.table_niche .table {
+  min-width: 690px;
+}
+.table_niche .t_column:nth-child(1) {
+  width: 13.8%;
+}
+.table_niche .t_column:nth-child(2) {
+  width: 21%;
+}
+.table_niche .t_column:nth-child(3) {
+  width: 23.2%;
+}
+.table_niche .t_column:nth-child(4) {
+  width: 24.6%;
+}
+.table_niche .t_column:nth-child(5) {
+  width: 17.4%;
+}
+.table_niche .block_pagination {
+  min-width: 690px;
+}
+
+.table_order.table_wrapper {
+  margin-bottom: 50px;
+}
+.table_order .table {
+  min-width: 840px;
+}
+.table_order .t_column:nth-child(1) {
+  width: 16%;
+}
+.table_order .t_column:nth-child(2) {
+  width: 24%;
+}
+.table_order .t_column:nth-child(3) {
+  width: 23.8%;
+}
+.table_order .t_column:nth-child(4) {
+  width: 17.2%;
+}
+.table_order .t_column:nth-child(5) {
+  width: 19%;
+}
+.table_order .block_pagination {
+  min-width: 840px;
+}
+
+.table_products .table {
+  min-width: 650px;
+}
+.table_products .t_column:nth-child(1) {
+  width: 29.3%;
+}
+.table_products .t_column:nth-child(2) {
+  width: 17.7%;
+}
+.table_products .t_column:nth-child(3) {
+  width: 12%;
+}
+.table_products .t_column:nth-child(4) {
+  width: 41%;
+}
+.table_products .block_pagination {
+  min-width: 650px;
+}
+
+.table_notification.table_wrapper,
+.table_messages.table_wrapper {
+  padding: 0;
+  border: none;
+}
+.table_notification .table,
+.table_messages .table {
+  min-width: 1400px;
+}
+.table_notification .t_row,
+.table_messages .t_row {
+  font-weight: 700;
+}
+.table_notification .t_row:nth-child(2n+1),
+.table_messages .t_row:nth-child(2n+1) {
+  font-weight: 300;
+  font-style: italic;
+}
+.table_notification .t_column:nth-child(1),
+.table_messages .t_column:nth-child(1) {
+  width: 11.8%;
+}
+.table_notification .t_column:nth-child(2),
+.table_messages .t_column:nth-child(2) {
+  width: 15.1%;
+}
+.table_notification .t_column:nth-child(3),
+.table_messages .t_column:nth-child(3) {
+  width: 17.45%;
+}
+.table_notification .t_column:nth-child(4),
+.table_messages .t_column:nth-child(4) {
+  width: 21.25%;
+}
+.table_notification .t_column:nth-child(5),
+.table_messages .t_column:nth-child(5) {
+  font-style: italic;
+  width: 34.4%;
+}
+.table_notification .block_pagination,
+.table_messages .block_pagination {
+  min-width: 1440px;
 }
 
 .disable {

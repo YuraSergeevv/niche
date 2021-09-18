@@ -78,6 +78,7 @@ a {
     padding-top: 80px;
     @media (hover: none) and (pointer: coarse), (max-width: 1024px) {
         padding-top: 95px;
+        padding-bottom: 50px;
     }
 }
 

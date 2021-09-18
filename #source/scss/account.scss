@@ -4,5 +4,252 @@
     }
     .content {
         padding: 0 30px;
+        @media (max-width: 767px) {
+            padding: 0;
+        }
+    }
+    .tabels_wrap {
+        display: flex;
+    }
+    .left_tabels {
+        width: 35%;
+        margin-right: 15px;
+    }
+    .right_tabels {
+        width: 65%;
+        margin-left: 15px;
+    }
+    .column {
+        width: 50%;
+        margin: 0 15px;
+        &:first-of-type {
+            margin-left: 0;
+        }
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}
+
+.table_a-info {
+    .table {
+        min-width: 380px;
+    }
+    .t_column {
+        &:nth-child(1) {
+            width: 38%;
+        }
+        &:nth-child(2) {
+            width: 62%;
+        }
+    }
+    .block_pagination {
+        min-width: 380px;
+    }
+}
+
+.table_a-document {
+    .table {
+        min-width: 380px;
+    }
+    .t_column {
+        &:nth-child(1) {
+            width: 100%;
+        }
+    }
+    .block_pagination {
+        min-width: 380px;
+    }
+}
+
+.table_a-niche {
+    .table {
+        min-width: 680px;
+    }
+    .t_column {
+        &:nth-child(1) {
+            width: 13.2%;
+        }
+        &:nth-child(2) {
+            width: 20.6%;
+        }
+        &:nth-child(3) {
+            width: 23.5%;
+        }
+        &:nth-child(4) {
+            width: 25%;
+        }
+        &:nth-child(5) {
+            width: 17.6%;
+        }
+    }
+    .block_pagination {
+        min-width: 680px;
+    }
+}
+
+.table_a-products {
+    .table {
+        min-width: 680px;
+    }
+    .t_column {
+        &:nth-child(1) {
+            width: 29.2%;
+        }
+        &:nth-child(2) {
+            width: 17.7%;
+        }
+        &:nth-child(3) {
+            width: 11.5%;
+        }
+        &:nth-child(4) {
+            width: 41.5%;
+        }
+    }
+    .block_pagination {
+        min-width: 680px;
+    }
+}
+
+.table_a-orders {
+    .table {
+        min-width: 680px;
+    }
+    .t_column {
+        &:nth-child(1) {
+            width: 25, 4%;
+        }
+        &:nth-child(2) {
+            width: 23, 9%;
+        }
+        &:nth-child(3) {
+            width: 20, 4%;
+        }
+        &:nth-child(4) {
+            width: 14, 8%;
+        }
+        &:nth-child(5) {
+            width: 15, 5%;
+        }
+    }
+    .block_pagination {
+        min-width: 680px;
+    }
+}
+
+.table_niche {
+    .table {
+        min-width: 690px;
+    }
+    .t_column {
+        &:nth-child(1) {
+            width: 13.8%;
+        }
+        &:nth-child(2) {
+            width: 21%;
+        }
+        &:nth-child(3) {
+            width: 23.2%;
+        }
+        &:nth-child(4) {
+            width: 24.6%;
+        }
+        &:nth-child(5) {
+            width: 17.4%;
+        }
+    }
+    .block_pagination {
+        min-width: 690px;
+    }
+}
+
+.table_order {
+    &.table_wrapper {
+        margin-bottom: 50px;
+    }
+    .table {
+        min-width: 840px;
+    }
+    .t_column {
+        &:nth-child(1) {
+            width: 16%;
+        }
+        &:nth-child(2) {
+            width: 24%;
+        }
+        &:nth-child(3) {
+            width: 23.8%;
+        }
+        &:nth-child(4) {
+            width: 17.2%;
+        }
+        &:nth-child(5) {
+            width: 19%;
+        }
+    }
+    .block_pagination {
+        min-width: 840px;
+    }
+}
+
+.table_products {
+    .table {
+        min-width: 650px;
+    }
+    .t_column {
+        &:nth-child(1) {
+            width: 29.3%;
+        }
+        &:nth-child(2) {
+            width: 17.7%;
+        }
+        &:nth-child(3) {
+            width: 12%;
+        }
+        &:nth-child(4) {
+            width: 41%;
+        }
+    }
+    .block_pagination {
+        min-width: 650px;
+    }
+}
+
+.table_notification,
+.table_messages {
+    &.table_wrapper {
+        padding: 0;
+        border: none;
+    }
+    .table {
+        min-width: 1400px;
+    }
+    .t_row {
+        font-weight: 700;
+        &:nth-child(2n + 1) {
+            font-weight: 300;
+            font-style: italic;
+        }
+    }
+    .t_column {
+        &:nth-child(1) {
+            width: 11.8%;
+        }
+        &:nth-child(2) {
+            width: 15.1%;
+        }
+        &:nth-child(3) {
+            width: 17.45%;
+        }
+        &:nth-child(4) {
+            width: 21.25%;
+        }
+        &:nth-child(5) {
+            font-style: italic;
+            width: 34.4%;
+        }
+    }
+    .block_pagination {
+        min-width: 1440px;
     }
 }
