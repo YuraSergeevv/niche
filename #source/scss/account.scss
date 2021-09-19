@@ -52,10 +52,16 @@
         display: flex;
         align-items: center;
         margin-bottom: 30px;
+        @media (max-width: 767px) {
+            flex-direction: column;
+        }
     }
     .title_text {
         font-size: 20px;
         color: #ffffff;
+        @media (max-width: 767px) {
+            margin-bottom: 15px;
+        }
     }
     .back {
         margin-left: auto;
@@ -66,6 +72,11 @@
         transition: 0.4s;
         &:hover {
             background-color: transparentize($color: $color_1, $amount: 0);
+        }
+        @media (max-width: 767px) {
+            margin: 0;
+            width: 100%;
+            text-align: center;
         }
     }
 }
@@ -536,6 +547,9 @@
                 align-items: center;
                 border: 1px solid #3a3f49;
                 margin: 0 10px 0 0;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
                 label {
                     cursor: pointer;
                     margin-left: 10px;
