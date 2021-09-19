@@ -1849,15 +1849,13 @@ li.counter li:before {
 }
 
 .message_wrap {
-  border: 3px solid #515662;
   box-sizing: border-box;
-  border-radius: 8px;
 }
 .message_wrap .message_title {
   font-weight: bold;
   font-size: 20px;
   color: #ffffff;
-  margin: 5px 0 10px 5px;
+  margin: 5px 0 20px 5px;
 }
 @media (max-width: 767px) {
   .message_wrap .message_title {
@@ -1870,6 +1868,7 @@ li.counter li:before {
   min-height: 500px;
   max-height: 600px;
   overflow-x: auto;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
