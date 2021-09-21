@@ -397,9 +397,6 @@ a:hover {
 .input_item.required .title_input span::after {
   content: "*";
   color: #be1e28;
-  position: absolute;
-  right: -10px;
-  top: 0;
 }
 .input_item.error .input_text,
 .input_item.error .select__header,
@@ -420,6 +417,7 @@ a:hover {
   position: relative;
   height: 32px;
   width: 38px;
+  background-color: #1b202a;
 }
 .langs:hover .lang_block {
   opacity: 1;
@@ -435,6 +433,7 @@ a:hover {
   left: 0;
   border: 1px solid #3a3f49;
   border-radius: 4px;
+  background-color: #1b202a;
 }
 .langs .lang_block:after {
   content: "";
@@ -1092,6 +1091,7 @@ li.counter li:before {
 }
 .wrapper.main .form_inner input[type=submit] {
   margin: 0 auto;
+  font-size: 16px;
 }
 .wrapper.main .form_inner .link_row {
   display: flex;
@@ -2111,6 +2111,10 @@ li.counter li:before {
 
 .main.wrapper {
   padding: 0;
+}
+
+.red {
+  color: #be1e28;
 }
 
 .title {

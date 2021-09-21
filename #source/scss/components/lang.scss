@@ -7,6 +7,7 @@
   position: relative;
   height: 32px;
   width: 38px;
+  background-color: #1b202a;
   &:hover {
     .lang_block {
       opacity: 1;
@@ -23,6 +24,7 @@
     left: 0;
     border: 1px solid #3a3f49;
     border-radius: 4px;
+    background-color: #1b202a;
     &:after {
       content: "";
       position: absolute;
